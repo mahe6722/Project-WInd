@@ -56,7 +56,7 @@ public class MouseMovement : MonoBehaviour {
         }
         //Clamp Player between -8 and 8 on screen.
         var playerPosition = transform.position;
-        playerPosition.x = Mathf.Clamp(transform.position.x, -8f, 8f);
+        playerPosition.x = Mathf.Clamp(transform.position.x, -4f, 4f);
         transform.position = playerPosition;
     }
 
