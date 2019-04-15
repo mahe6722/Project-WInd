@@ -9,6 +9,7 @@ TagManager:
   - Fence
   - Tent
   - Fuel
+  - ExtraObstacle
   layers:
   - Default
   - TransparentFX
