@@ -19,9 +19,9 @@ public class FuelPickUp : MonoBehaviour
         if (transform.localScale.x >= 0.2 && transform.localScale.y >= 0.2) {
             containerSize = 25;
         }
-        //if (transform.localScale.x >= 0.2 && transform.localScale.y >= 0.2) {
-        //  containerSize = 10;
-        //}
+        if (transform.localScale.x >= 0.1 && transform.localScale.y >= 0.1) {
+          containerSize = 10;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -31,6 +31,9 @@ public class FuelPickUp : MonoBehaviour
             playerFuelScript.playerFuel += containerSize;
            
             print("Player picked up the fuel!");
+            Destroy(gameObject);
+        }
+        else {
             Destroy(gameObject);
         }
     }
