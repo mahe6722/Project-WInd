@@ -8,11 +8,18 @@ public class MouseMovement : MonoBehaviour {
     public float overTilt = 0;
     private int mouseDirection;
 
+    Rigidbody2D playerRigidBody;
+
     public float turnSpeed;
 
     public float inputMouseX; //Debug Mouse Input
 
-	void Update ()
+    void Start()
+    {
+        playerRigidBody = GetComponent<Rigidbody2D>();
+    }
+
+    void Update ()
     {       
         inputMouseX = Input.GetAxis("Mouse X"); //Debug Mouse Input
 
@@ -52,12 +59,16 @@ public class MouseMovement : MonoBehaviour {
     void PlayerTurning()
     {
         if (tilt != 0) {
-            transform.Translate(turnSpeed * (tilt / 100), 0f, 0f);
+            transform.Translate(turnSpeed * (tilt / 100) * Time.deltaTime, 0f, 0f, Space.World);
         }
+
         //Clamp Player between -8 and 8 on screen.
         var playerPosition = transform.position;
         playerPosition.x = Mathf.Clamp(transform.position.x, -4f, 4f);
         transform.position = playerPosition;
+
+        transform.rotation = Quaternion.Euler(0.0f, 0.0f, turnSpeed * (tilt / 25) * -1);
+        
     }
 
     void CheckMouseDirection()

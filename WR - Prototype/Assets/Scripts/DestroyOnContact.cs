@@ -23,5 +23,10 @@ public class DestroyOnContact : MonoBehaviour
             print("Fuel spawned on obstacle - Disabling the obstacle");
             Destroy(gameObject);
         }
+        if (other.gameObject.tag == "Cog") 
+        {
+            print("Cog spawned on obstacle - Disabling the obstacle");
+            Destroy(gameObject);
+        }
     }
 }
