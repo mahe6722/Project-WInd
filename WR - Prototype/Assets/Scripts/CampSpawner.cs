@@ -58,7 +58,7 @@ public class CampSpawner : MonoBehaviour
 
     IEnumerator campWave()
     {
-        while (true)
+        while (player.activeSelf)
         {
             respawnTime = Random.Range(3, 8);
             randomNumber = Random.Range(0, 2);

@@ -18,12 +18,13 @@ public class FuelSpawner : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         timerRespawn += Time.deltaTime;
 
         randomX = Random.Range(-4, 4);
 
-        transform.position = new Vector3(randomX, 7, 0); 
+        transform.position = new Vector2(randomX, 7); 
 
 
         if(timerRespawn >= respawnTime && player.activeInHierarchy == true) 

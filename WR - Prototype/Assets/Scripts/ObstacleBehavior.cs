@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleBehavior : MonoBehaviour
 {
-    public float speed;
+    //public float speed;
 
     private Vector2 screenBounds;
 
@@ -15,9 +15,9 @@ public class ObstacleBehavior : MonoBehaviour
 
     void Update()
     {
-        speed = Config.speed;
+        //speed = Config.speed;
 
-        gameObject.transform.Translate(Vector2.down * speed * Time.deltaTime);
+        gameObject.transform.Translate(Vector2.down * Config.speed * Time.deltaTime);
         if (transform.position.y < screenBounds.y * -2)
         {
             Destroy(this.gameObject);

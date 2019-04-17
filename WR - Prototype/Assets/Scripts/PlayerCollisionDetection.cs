@@ -11,6 +11,10 @@ public class PlayerCollisionDetection : MonoBehaviour
         player = GameObject.Find("Player");
     }
 
+    //void Update()
+    //{
+    //}
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (player != null)

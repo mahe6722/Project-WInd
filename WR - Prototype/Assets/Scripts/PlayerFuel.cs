@@ -8,12 +8,12 @@ public class PlayerFuel : MonoBehaviour {
     public float playerFuel;
     public float fuelConsumption;
     public Slider fuelUI;
-
-	// Use this for initialization
-	void Start () {
-
-	}
 	
+    //void Start()
+    //{
+    //    playerFuel = Config.fuel;
+    //}
+
 	// Update is called once per frame
 	void Update ()
     {
@@ -29,10 +29,10 @@ public class PlayerFuel : MonoBehaviour {
         if (playerFuel > 0) {
             playerFuel -= fuelConsumption * Time.deltaTime;
         }
-
         //Give console message, Out of Fuel and make sure fuel is exactly 0.
-        if (playerFuel <= 0) {
-            print("Out of Fuel");
+        if (playerFuel <= 0)
+        {
+            //print("Out of Fuel");
             playerFuel = 0;
         }
 

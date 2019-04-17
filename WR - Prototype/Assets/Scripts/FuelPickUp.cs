@@ -19,7 +19,7 @@ public class FuelPickUp : MonoBehaviour
         if (transform.localScale.x >= 0.2 && transform.localScale.y >= 0.2) {
             containerSize = 25;
         }
-        if (transform.localScale.x >= 0.1 && transform.localScale.y >= 0.1) {
+        if (transform.localScale.x == 0.1f && transform.localScale.y == 0.1f) {
           containerSize = 10;
         }
     }

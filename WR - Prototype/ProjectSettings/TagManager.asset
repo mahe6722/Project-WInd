@@ -10,6 +10,7 @@ TagManager:
   - Tent
   - Fuel
   - ExtraObstacle
+  - Cog
   layers:
   - Default
   - TransparentFX

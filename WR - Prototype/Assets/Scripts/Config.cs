@@ -13,24 +13,47 @@ public class Config : MonoBehaviour
 
     public float timeToIncreaseDifficulty = 5;
 
-	void Start ()
+    float playerFuel;
+
+    PlayerFuel playerFuelScript;
+    MouseMovement mouseMovementScript;
+
+    void Start ()
     {
         coroutine = speedIncrease();
         StartCoroutine(coroutine);
-	}
-    //void Update ()
-    //{
-    //}
+
+        playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
+        //playerFuel = playerFuelScript.playerFuel;
+
+        mouseMovementScript = GameObject.Find("Player").GetComponent<MouseMovement>();
+    }
+
+    void Update()
+    {
+        if (playerFuelScript.playerFuel <= 0)
+        {
+            speed -= 0.03f;
+            if (speed <= 0)
+            {
+                print("GameOver");
+                mouseMovementScript.enabled = false;
+                Time.timeScale = 0;
+            }
+        }
+    }
 
     IEnumerator speedIncrease()
     {
-        while (true)
+        while (speed <= maxSpeed)
         {
+            //If speed is less that speed cap, increase it every 5 seconds
             if (speed <= maxSpeed)
             {
                 yield return new WaitForSeconds(timeToIncreaseDifficulty);
                 speed += speedIncrement;
             }
+            //Else set the speed to speed cap and stop increasing the speed
             else
             {
                 speed = maxSpeed;
