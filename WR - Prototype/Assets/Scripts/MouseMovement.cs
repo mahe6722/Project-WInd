@@ -9,6 +9,7 @@ public class MouseMovement : MonoBehaviour {
     private int mouseDirection;
 
     Rigidbody2D playerRigidBody;
+    GameObject player;
 
     public float turnSpeed;
 
@@ -16,7 +17,8 @@ public class MouseMovement : MonoBehaviour {
 
     void Start()
     {
-        playerRigidBody = GetComponent<Rigidbody2D>();
+        player = GameObject.Find("Player");
+        playerRigidBody = player.GetComponent<Rigidbody2D>();
     }
 
     void Update ()
@@ -34,22 +36,22 @@ public class MouseMovement : MonoBehaviour {
     void DetermineTilt()
     {
         //Add mouseDirection to tilt to measure the placement of Mast!
-        if (transform.position.x < 8 && transform.position.x > -8) {
+        if (player.transform.position.x < 4 && player.transform.position.x > -4) {
             tilt += mouseDirection;
         } 
 
         //If Player has reached edge of screen. Mast is overTilting!
-        else if (transform.position.x >= 8 || transform.position.x <= -8) {
+        else if (player.transform.position.x >= 4 || player.transform.position.x <= -4) {
             overTilt += mouseDirection;
         }
 
         //Check if Overtilted mast has returned to the furthest edge of the intended tilt!
-        if (transform.position.x <= -8 && overTilt > 0) {
+        if (player.transform.position.x <= -4 && overTilt > 0) {
             tilt += overTilt;
 
             overTilt = 0;
         }
-        if (transform.position.x >= 8 && overTilt < 0) {
+        if (player.transform.position.x >= 4 && overTilt < 0) {
             tilt += overTilt;
 
             overTilt = 0;
@@ -59,15 +61,15 @@ public class MouseMovement : MonoBehaviour {
     void PlayerTurning()
     {
         if (tilt != 0) {
-            transform.Translate(turnSpeed * (tilt / 100) * Time.deltaTime, 0f, 0f, Space.World);
+            player.transform.Translate(turnSpeed * (tilt / 100) * Time.deltaTime, 0f, 0f, Space.World);
         }
 
         //Clamp Player between -8 and 8 on screen.
-        var playerPosition = transform.position;
-        playerPosition.x = Mathf.Clamp(transform.position.x, -4f, 4f);
-        transform.position = playerPosition;
+        var playerPosition = player.transform.position;
+        playerPosition.x = Mathf.Clamp(player.transform.position.x, -4f, 4f);
+        player.transform.position = playerPosition;
 
-        transform.rotation = Quaternion.Euler(0.0f, 0.0f, turnSpeed * (tilt / 25) * -1);
+        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, turnSpeed * (tilt / 25) * -1);
         
     }
 
