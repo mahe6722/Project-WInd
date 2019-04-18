@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CogPickUp : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+public class CogPickUp : MonoBehaviour
+{
+    public int cogValue;
 
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
         {
             print("Player picked up a cog!");
+            Config.score += cogValue;
             Destroy(gameObject);
         }
     }

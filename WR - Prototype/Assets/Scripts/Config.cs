@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Config : MonoBehaviour
 {
-    IEnumerator coroutine;
+    IEnumerator coroutineSpeed;
+    IEnumerator coroutineScore;
 
     public static float speed = 3;
+    public static int score = 0;
 
     public float maxSpeed;
     public float speedIncrement;
@@ -20,11 +22,13 @@ public class Config : MonoBehaviour
 
     void Start ()
     {
-        coroutine = speedIncrease();
-        StartCoroutine(coroutine);
+        coroutineSpeed = speedIncrease();
+        StartCoroutine(coroutineSpeed);
+
+        coroutineScore = scoreIncrease();
+        StartCoroutine(coroutineScore);
 
         playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
-        //playerFuel = playerFuelScript.playerFuel;
 
         mouseMovementScript = GameObject.Find("Player").GetComponent<MouseMovement>();
     }
@@ -38,7 +42,7 @@ public class Config : MonoBehaviour
             {
                 print("GameOver");
                 mouseMovementScript.enabled = false;
-                Time.timeScale = 0;
+                //Time.timeScale = 0;
             }
         }
     }
@@ -57,7 +61,21 @@ public class Config : MonoBehaviour
             else
             {
                 speed = maxSpeed;
-                StopCoroutine(coroutine);
+                StopCoroutine(coroutineSpeed);
+            }
+        }
+    }
+
+    IEnumerator scoreIncrease()
+    {
+        //Increases score by 1 every second
+        while (speed <= maxSpeed)
+        {
+            yield return new WaitForSeconds(1);
+            score++;
+            if (speed <= 0)
+            {
+                StopCoroutine(coroutineScore);
             }
         }
     }
