@@ -7,9 +7,12 @@ public class ObstacleBehavior : MonoBehaviour
     //public float speed;
 
     private Vector2 screenBounds;
+    Config configScript;
 
     void Start()
     {
+        configScript = GameObject.Find("DifficultySettings").GetComponent<Config>();
+
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
     }
 
@@ -17,7 +20,7 @@ public class ObstacleBehavior : MonoBehaviour
     {
         //speed = Config.speed;
 
-        gameObject.transform.Translate(Vector2.down * Config.speed * Time.deltaTime);
+        gameObject.transform.Translate(Vector2.down * configScript.speed * Time.deltaTime);
         if (transform.position.y < screenBounds.y * -2)
         {
             Destroy(this.gameObject);

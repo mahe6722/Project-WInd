@@ -24,6 +24,7 @@ public class GameState : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 		if (player.activeInHierarchy == false || playerFuel.playerFuel <= 0f ) {
+            Time.timeScale = 1;
             gameOver = true;
         }
 

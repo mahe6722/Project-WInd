@@ -6,11 +6,12 @@ using UnityEngine.UI;
 public class Score : MonoBehaviour
 {
     public Text scoreText;
+    public Config configScript;
     int score;
 
 	void Update ()
     {
-        score = Config.score;
+        score = configScript.score;
         scoreText.text = score.ToString();
 	}
 }

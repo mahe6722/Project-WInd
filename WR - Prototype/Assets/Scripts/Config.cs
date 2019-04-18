@@ -7,8 +7,8 @@ public class Config : MonoBehaviour
     IEnumerator coroutineSpeed;
     IEnumerator coroutineScore;
 
-    public static float speed = 3;
-    public static int score = 0;
+    public float speed = 3;
+    public int score = 0;
 
     public float maxSpeed;
     public float speedIncrement;
@@ -19,6 +19,7 @@ public class Config : MonoBehaviour
 
     PlayerFuel playerFuelScript;
     MouseMovement mouseMovementScript;
+    GameObject player;
 
     void Start ()
     {
@@ -30,7 +31,9 @@ public class Config : MonoBehaviour
 
         playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
 
-        mouseMovementScript = GameObject.Find("Player").GetComponent<MouseMovement>();
+        mouseMovementScript = GameObject.Find("GameManager").GetComponent<MouseMovement>();
+
+        player = GameObject.Find("Player");
     }
 
     void Update()
@@ -41,7 +44,7 @@ public class Config : MonoBehaviour
             if (speed <= 0)
             {
                 print("GameOver");
-                mouseMovementScript.enabled = false;
+                mouseMovementScript.turnSpeed = 0f;
                 //Time.timeScale = 0;
             }
         }
@@ -73,7 +76,7 @@ public class Config : MonoBehaviour
         {
             yield return new WaitForSeconds(1);
             score++;
-            if (speed <= 0)
+            if (speed <= 0 || player.activeInHierarchy == false)
             {
                 StopCoroutine(coroutineScore);
             }
