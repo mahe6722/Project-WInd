@@ -26,24 +26,56 @@ public class MainMenu : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+        HighlightMenuButtons();
 
-        if (mastMovement.tilt > 0 && text_Play.color == colorPressed) {
-            text_HighScores.color = colorPressed;
-            text_Play.color = colorStart;
-        }
-        else if(mastMovement.tilt > 0 && text_HighScores.color == colorPressed) {
-            text_MastCalibration.color = colorPressed;
-            text_HighScores.color = colorStart;
-        } 
-        else if (mastMovement.tilt > 0 && text_MastCalibration.color == colorPressed) {
-            text_Quit.color = colorPressed;
-            text_MastCalibration.color = colorStart;
-        }
+        if (Input.GetKey(KeyCode.Space) && textMainMenu.activeInHierarchy == true) {
 
-
-        if (Input.GetKey(KeyCode.Space)) {
+            if(text_Play.color == colorPressed) {
             SceneManager.LoadScene(1);
+            }
+
+            if(text_HighScores.color == colorPressed) {
+                print("SHOWING HIGHSCORES");
+            }
+
+            if (text_MastCalibration.color == colorPressed) {
+                print("CALIBRATE MAST");
+            }
+
+            if(text_Quit.color == colorPressed) {
+                Application.Quit();
+            }
         }
-	}
+
+    }
+
+    private void HighlightMenuButtons()
+    {
+        if (mastMovement.tilt < 10) {
+            text_Play.color = colorPressed;
+            text_HighScores.color = colorStart;
+            text_MastCalibration.color = colorStart;
+            text_Quit.color = colorStart;
+        }
+        if (mastMovement.tilt > 10) {
+            text_Play.color = colorStart;
+            text_HighScores.color = colorPressed;
+            text_MastCalibration.color = colorStart;
+            text_Quit.color = colorStart;
+        }
+        if (mastMovement.tilt > 20) {
+            text_Play.color = colorStart;
+            text_HighScores.color = colorStart;
+            text_MastCalibration.color = colorPressed;
+            text_Quit.color = colorStart;
+        }
+        if (mastMovement.tilt > 30) {
+            text_Play.color = colorStart;
+            text_HighScores.color = colorStart;
+            text_MastCalibration.color = colorStart;
+            text_Quit.color = colorPressed;
+        }
+    }
 }
