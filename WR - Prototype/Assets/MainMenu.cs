@@ -28,15 +28,21 @@ public class MainMenu : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        //Tilt Right to scroll down, Tilt back towards middle to scroll up!
         HighlightMenuButtons();
+        MenuButtonInteractions();
 
+    }
+
+    private void MenuButtonInteractions()
+    {
         if (Input.GetKey(KeyCode.Space) && textMainMenu.activeInHierarchy == true) {
 
-            if(text_Play.color == colorPressed) {
-            SceneManager.LoadScene(1);
+            if (text_Play.color == colorPressed) {
+                SceneManager.LoadScene(1);
             }
 
-            if(text_HighScores.color == colorPressed) {
+            if (text_HighScores.color == colorPressed) {
                 print("SHOWING HIGHSCORES");
             }
 
@@ -44,11 +50,11 @@ public class MainMenu : MonoBehaviour {
                 print("CALIBRATE MAST");
             }
 
-            if(text_Quit.color == colorPressed) {
+            if (text_Quit.color == colorPressed) {
+                print("Quit Application");
                 Application.Quit();
             }
         }
-
     }
 
     private void HighlightMenuButtons()

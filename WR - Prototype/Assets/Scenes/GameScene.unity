@@ -113,6 +113,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &88595512
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 88595514}
+  - component: {fileID: 88595513}
+  m_Layer: 0
+  m_Name: flashColorScore
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!212 &88595513
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88595512}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.96382284, g: 0.9716981, b: 0.68293875, a: 0.78431374}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &88595514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88595512}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 115, z: 0}
+  m_LocalScale: {x: 0.6666667, y: 0.6666667, z: 0.6666667}
+  m_Children: []
+  m_Father: {fileID: 2136175656}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &699934498 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1875362646956394, guid: fa63c51d068df274b97175d6125dda75,
@@ -273,12 +348,22 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114744445285327728, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: configScript
+      value: 
+      objectReference: {fileID: 1661263899}
+    - target: {fileID: 114945198477265534, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: flashColorScore
+      value: 
+      objectReference: {fileID: 88595513}
     - target: {fileID: 114945198477265534, guid: 7c93d4b76137cbb419b779669d54389b,
         type: 2}
       propertyPath: mastMovement
       value: 
       objectReference: {fileID: 1819341740}
-    - target: {fileID: 114744445285327728, guid: 7c93d4b76137cbb419b779669d54389b,
+    - target: {fileID: 114945198477265534, guid: 7c93d4b76137cbb419b779669d54389b,
         type: 2}
       propertyPath: configScript
       value: 
@@ -288,11 +373,6 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114945198477265534, guid: 7c93d4b76137cbb419b779669d54389b,
-        type: 2}
-      propertyPath: textRestartMenu
-      value: 
-      objectReference: {fileID: 784123451}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93d4b76137cbb419b779669d54389b, type: 2}
   m_IsPrefabAsset: 0
@@ -470,3 +550,8 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 1098277903}
   m_Script: {fileID: -113659843, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!224 &2136175656 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 224730722295262604, guid: 7c93d4b76137cbb419b779669d54389b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1098277903}

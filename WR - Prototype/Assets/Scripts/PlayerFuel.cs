@@ -62,7 +62,7 @@ public class PlayerFuel : MonoBehaviour {
 
             if (fuelBar.color == fuelBarStartColor) {
 
-                fuelBar.color = new Color(0.45f, 0f, 0f, 1);
+                fuelBar.color = new Color(0.7f, 0f, 0f, 1);
 
             }
 

@@ -10,6 +10,7 @@ public class GameState : MonoBehaviour {
     public GameObject player;
     public GameObject restartMenu;
     public GameObject text_restartMenu;
+    public GameObject score_Text;
     public Image background_restartMenu;
 
     PlayerFuel playerFuel;
@@ -19,6 +20,7 @@ public class GameState : MonoBehaviour {
     void Start()
     {
         playerFuel = GameObject.Find("Player").GetComponent<PlayerFuel>();
+        score_Text = GameObject.Find("Score");
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class GameState : MonoBehaviour {
         }
 
         if (gameOver) {
+            score_Text.SetActive(false);
             restartMenu.SetActive(true);
             text_restartMenu.SetActive(false);
             background_restartMenu.color = Color.Lerp(background_restartMenu.color, new Color(0, 0, 0, 1), flashSpeed * Time.deltaTime);
