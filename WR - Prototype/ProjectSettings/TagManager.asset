@@ -11,6 +11,7 @@ TagManager:
   - Fuel
   - ExtraObstacle
   - Cog
+  - Building
   layers:
   - Default
   - TransparentFX

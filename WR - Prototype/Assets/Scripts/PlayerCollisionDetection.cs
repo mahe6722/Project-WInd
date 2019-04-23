@@ -19,7 +19,7 @@ public class PlayerCollisionDetection : MonoBehaviour
     {
         if (player != null)
         {
-            if (other.tag == "Fence" || other.tag == "Bunker")
+            if (other.tag == "Fence" || other.tag == "Building")
             {
                 print("Player hit a fence or a bunker");
                 player.SetActive(false);
