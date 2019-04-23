@@ -33,8 +33,6 @@ public class FuelPickUp : MonoBehaviour
             print("Player picked up the fuel!");
             Destroy(gameObject);
         }
-        else {
-            Destroy(gameObject);
-        }
+        
     }
 }
