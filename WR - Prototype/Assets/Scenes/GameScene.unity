@@ -542,6 +542,16 @@ Prefab:
       propertyPath: m_AnchoredPosition.x
       value: 210
       objectReference: {fileID: 0}
+    - target: {fileID: 224713180791252366, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 224987372894225374, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93d4b76137cbb419b779669d54389b, type: 2}
   m_IsPrefabAsset: 0
@@ -734,6 +744,11 @@ Prefab:
       propertyPath: m_EdgeRadius
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114607969289696296, guid: fa63c51d068df274b97175d6125dda75,
+        type: 2}
+      propertyPath: image_SlowMotionUI
+      value: 
+      objectReference: {fileID: 1938476071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa63c51d068df274b97175d6125dda75, type: 2}
   m_IsPrefabAsset: 0
@@ -765,7 +780,7 @@ RectTransform:
   - {fileID: 1938476070}
   - {fileID: 791057467}
   m_Father: {fileID: 592298977}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -825,7 +840,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.19215688, g: 0.45882356, b: 0.5803922, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
