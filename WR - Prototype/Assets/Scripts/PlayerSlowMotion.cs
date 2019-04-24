@@ -53,7 +53,7 @@ public class PlayerSlowMotion : MonoBehaviour {
             //Refill Slow Motion
         } else {
             if (image_SlowMotionUI.fillAmount < 1) {
-                image_SlowMotionUI.fillAmount += 0.2f * Time.deltaTime;
+                image_SlowMotionUI.fillAmount += 0.3f * Time.deltaTime;
             }
 
             //TURN SLOW_MOTION OFF!!

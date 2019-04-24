@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MastMovement : MonoBehaviour {
 
-    public float tilt = 0;
-    public float overTilt = 0;
+    public static float tilt = 0;
+    //public float overTilt = 0;
     private int mouseDirection;
 
     public GameObject player;

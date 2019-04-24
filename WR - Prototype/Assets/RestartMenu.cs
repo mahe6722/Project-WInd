@@ -82,11 +82,11 @@ public class RestartMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (mastMovement.tilt > 10) {
+        if (MastMovement.tilt > 10) {
             text_MainMenu.color = colorPressed;
             text_Restart.color = colorStart;
         }
-        if (mastMovement.tilt < 10) {
+        if (MastMovement.tilt < 10) {
             text_Restart.color = colorPressed;
             text_MainMenu.color = colorStart;
         }

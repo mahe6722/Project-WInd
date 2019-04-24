@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MouseMovement : MonoBehaviour {
 
-    public float tilt = 0;
+    //public static float tilt;
     public float overTilt = 0;
     private int mouseDirection;
 
@@ -37,7 +37,7 @@ public class MouseMovement : MonoBehaviour {
     {
         //Add mouseDirection to tilt to measure the placement of Mast!
         if (player.transform.position.x < 4 && player.transform.position.x > -4) {
-            tilt += mouseDirection;
+            MastMovement.tilt += mouseDirection;
         } 
 
         //If Player has reached edge of screen. Mast is overTilting!
@@ -47,12 +47,12 @@ public class MouseMovement : MonoBehaviour {
 
         //Check if Overtilted mast has returned to the furthest edge of the intended tilt!
         if (player.transform.position.x <= -4 && overTilt > 0) {
-            tilt += overTilt;
+            MastMovement.tilt += overTilt;
 
             overTilt = 0;
         }
         if (player.transform.position.x >= 4 && overTilt < 0) {
-            tilt += overTilt;
+            MastMovement.tilt += overTilt;
 
             overTilt = 0;
         }
@@ -60,8 +60,8 @@ public class MouseMovement : MonoBehaviour {
 
     void PlayerTurning()
     {
-        if (tilt != 0) {
-            player.transform.Translate(turnSpeed * (tilt / 100) * Time.deltaTime, 0f, 0f, Space.World);
+        if (MastMovement.tilt != 0) {
+            player.transform.Translate(turnSpeed * (MastMovement.tilt / 100) * Time.deltaTime, 0f, 0f, Space.World);
         }
 
         //Clamp Player between -8 and 8 on screen.
@@ -69,7 +69,7 @@ public class MouseMovement : MonoBehaviour {
         playerPosition.x = Mathf.Clamp(player.transform.position.x, -4f, 4f);
         player.transform.position = playerPosition;
 
-        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, turnSpeed * (tilt / 25) * -1);
+        player.transform.rotation = Quaternion.Euler(0.0f, 0.0f, turnSpeed * (MastMovement.tilt / 25) * -1);
         
     }
 

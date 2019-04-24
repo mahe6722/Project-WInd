@@ -15,7 +15,7 @@ public class MainMenu : MonoBehaviour {
     public Color colorStart;
     public Color colorPressed;
 
-    public MastMovement mastMovement;
+   
 
     // Use this for initialization
     void Start () {
@@ -59,25 +59,25 @@ public class MainMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (mastMovement.tilt < 10) {
+        if (MastMovement.tilt < 10) {
             text_Play.color = colorPressed;
             text_HighScores.color = colorStart;
             text_MastCalibration.color = colorStart;
             text_Quit.color = colorStart;
         }
-        if (mastMovement.tilt > 10) {
+        if (MastMovement.tilt > 10) {
             text_Play.color = colorStart;
             text_HighScores.color = colorPressed;
             text_MastCalibration.color = colorStart;
             text_Quit.color = colorStart;
         }
-        if (mastMovement.tilt > 20) {
+        if (MastMovement.tilt > 20) {
             text_Play.color = colorStart;
             text_HighScores.color = colorStart;
             text_MastCalibration.color = colorPressed;
             text_Quit.color = colorStart;
         }
-        if (mastMovement.tilt > 30) {
+        if (MastMovement.tilt > 30) {
             text_Play.color = colorStart;
             text_HighScores.color = colorStart;
             text_MastCalibration.color = colorStart;

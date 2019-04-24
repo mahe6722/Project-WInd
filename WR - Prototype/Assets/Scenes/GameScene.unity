@@ -130,7 +130,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.6915964, y: 4.7}
+  m_Offset: {x: -1.43, y: 4.7}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -166,7 +166,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 7}
+  m_Size: {x: 2.5, y: 7}
   m_EdgeRadius: 0
 --- !u!58 &699934501
 CircleCollider2D:
@@ -180,9 +180,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.64, y: 0}
+  m_Offset: {x: -1.87, y: 0}
   serializedVersion: 2
-  m_Radius: 1.5
+  m_Radius: 1
 --- !u!61 &699934508
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -389,6 +389,21 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114572060445387916, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.12941177
+      objectReference: {fileID: 0}
+    - target: {fileID: 114572060445387916, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.74509805
+      objectReference: {fileID: 0}
+    - target: {fileID: 114572060445387916, guid: 7c93d4b76137cbb419b779669d54389b,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0.64705884
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c93d4b76137cbb419b779669d54389b, type: 2}
   m_IsPrefabAsset: 0
@@ -466,6 +481,11 @@ Prefab:
       propertyPath: speedIncrement
       value: 0.15
       objectReference: {fileID: 0}
+    - target: {fileID: 114986534672312714, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: turnSpeed
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978e78cdaa551d548bf706e6cb1e679f, type: 2}
   m_IsPrefabAsset: 0
@@ -508,6 +528,31 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 20963785769451854, guid: 4359587f13d5482468a3efcd29a6eb4b,
+        type: 2}
+      propertyPath: m_BackGroundColor.r
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 20963785769451854, guid: 4359587f13d5482468a3efcd29a6eb4b,
+        type: 2}
+      propertyPath: m_BackGroundColor.g
+      value: 0.76840585
+      objectReference: {fileID: 0}
+    - target: {fileID: 20963785769451854, guid: 4359587f13d5482468a3efcd29a6eb4b,
+        type: 2}
+      propertyPath: m_BackGroundColor.b
+      value: 0.58406013
+      objectReference: {fileID: 0}
+    - target: {fileID: 20963785769451854, guid: 4359587f13d5482468a3efcd29a6eb4b,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 20963785769451854, guid: 4359587f13d5482468a3efcd29a6eb4b,
+        type: 2}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4359587f13d5482468a3efcd29a6eb4b, type: 2}
   m_IsPrefabAsset: 0
@@ -538,15 +583,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4995637712006952, guid: fa63c51d068df274b97175d6125dda75, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4995637712006952, guid: fa63c51d068df274b97175d6125dda75, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4995637712006952, guid: fa63c51d068df274b97175d6125dda75, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4995637712006952, guid: fa63c51d068df274b97175d6125dda75, type: 2}
       propertyPath: m_LocalRotation.w
@@ -574,7 +619,7 @@ Prefab:
     - target: {fileID: 61460671244944846, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: m_Offset.x
-      value: -1.86
+      value: -1.77
       objectReference: {fileID: 0}
     - target: {fileID: 61460671244944846, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
@@ -611,6 +656,12 @@ Prefab:
       propertyPath: mouseMovementScript
       value: 
       objectReference: {fileID: 1819341740}
+    - target: {fileID: 212517789613353622, guid: fa63c51d068df274b97175d6125dda75,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9f47677e9fd1842458359df255cbc824,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa63c51d068df274b97175d6125dda75, type: 2}
   m_IsPrefabAsset: 0
