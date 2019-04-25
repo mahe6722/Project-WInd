@@ -7,10 +7,18 @@ public class FuelPickUp : MonoBehaviour
     public float containerSize;
     PlayerFuel playerFuelScript;
 
+    public AudioSource fuelSound;
+    public SpriteRenderer fuelSprite;
+    public BoxCollider2D fuelCollider;
+
     private void Start()
     {
         playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
         CheckSizeFuelContainer();
+
+        fuelSound = GetComponent<AudioSource>();
+        fuelSprite = GetComponent<SpriteRenderer>();
+        fuelCollider = GetComponent<BoxCollider2D>();
     }
 
     private void CheckSizeFuelContainer()
@@ -28,10 +36,17 @@ public class FuelPickUp : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            fuelSprite.enabled = false;
+            fuelCollider.enabled = false;
+            fuelSound.Play();
+
             playerFuelScript.playerFuel += containerSize;
-           
+
             print("Player picked up the fuel!");
-            Destroy(gameObject);
+
+            if (!fuelSound.isPlaying) {
+                Destroy(gameObject);
+            }
         }
         
     }

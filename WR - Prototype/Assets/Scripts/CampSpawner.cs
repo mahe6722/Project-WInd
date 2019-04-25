@@ -35,7 +35,7 @@ public class CampSpawner : MonoBehaviour
         if (player.activeSelf)
         {
             GameObject campLeft = Instantiate(campPrefabLeft) as GameObject;
-            campLeft.transform.position = new Vector2(-1f, screenBounds.y * 2);
+            campLeft.transform.position = new Vector2(-0.48f, screenBounds.y * 2);
         }
         else
         {
