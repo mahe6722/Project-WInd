@@ -8,7 +8,10 @@ public class PlayerSlowMotion : MonoBehaviour {
     public float slowMotionFactor = 0.05f;
 
     public Image image_SlowMotionUI;
-    public Image image_SlowMotionUIBorder;
+    public Image image_SlowMotionUIBorder; //Outline for Hourglass
+
+    public Image image_BorderSlowMotion;
+    public Color colorStart_BorderSlowMotion;
 
     public MouseMovement mouseMovementScript;
     float normalTurnSpeed;
@@ -32,6 +35,23 @@ public class PlayerSlowMotion : MonoBehaviour {
 
         //Controls how Slowmotion works.
         UsingSlowMotion();
+
+        /*if(image_SlowMotionUI.fillAmount <= 3) {
+
+            if (image_BorderSlowMotion.color == colorStart_BorderSlowMotion) {
+
+            }
+            else {
+                image_BorderSlowMotion.color = Color.Lerp(image_BorderSlowMotion.color, Color.clear, 2f * Time.deltaTime);
+            }
+        }
+        */
+
+        /*if (takesDamage) {
+            damageImage.color = flashColor;
+        } else {
+            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }*/
     }
 
     private void UsingSlowMotion()

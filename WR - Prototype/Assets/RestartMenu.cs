@@ -27,12 +27,10 @@ public class RestartMenu : MonoBehaviour {
     void Start()
     {
 
-       colorStart = text_MainMenu.color;
-       colorPressed = text_Restart.color;
+        colorStart = text_MainMenu.color;
+        colorPressed = text_Restart.color;
 
-       colorStart_yourScore = text_yourScore.color;
-
-
+        colorStart_yourScore = text_yourScore.color;
     }
 
     // Update is called once per frame

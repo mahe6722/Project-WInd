@@ -13,6 +13,8 @@ public class GameState : MonoBehaviour {
     public GameObject score_Text;
     public Image background_restartMenu;
 
+    public GameObject highscoreTable;
+
     PlayerFuel playerFuel;
 
     public float flashSpeed;
@@ -38,6 +40,7 @@ public class GameState : MonoBehaviour {
 
             if (background_restartMenu.color.a >= 0.95f) {
                 text_restartMenu.SetActive(true);
+                highscoreTable.SetActive(true);
             }
         }
 	}
