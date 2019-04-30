@@ -10,8 +10,14 @@ public class PlayerSlowMotion : MonoBehaviour {
     public Image image_SlowMotionUI;
     public Image image_SlowMotionUIBorder; //Outline for Hourglass
 
-    public Image image_BorderSlowMotion;
-    public Color colorStart_BorderSlowMotion;
+    public Image overlay_SlowMotion;
+    public Color flashColor;
+    public Color startColor;
+    public GameObject overlayBorder;
+
+    public float flashTimer;
+    public float flashDuration;
+  
 
     public MouseMovement mouseMovementScript;
     float normalTurnSpeed;
@@ -23,7 +29,8 @@ public class PlayerSlowMotion : MonoBehaviour {
     private void Start()
     {
        normalTurnSpeed = mouseMovementScript.turnSpeed;
-        slowMotionTurnSpeed = normalTurnSpeed + 0.3f;
+       slowMotionTurnSpeed = normalTurnSpeed + 0.3f;
+
         
     }
 
@@ -36,16 +43,29 @@ public class PlayerSlowMotion : MonoBehaviour {
         //Controls how Slowmotion works.
         UsingSlowMotion();
 
-        /*if(image_SlowMotionUI.fillAmount <= 3) {
+        if(image_SlowMotionUI.fillAmount < 0.4f && slowmotionReady == true) {
+            overlayBorder.SetActive(true);
+            flashTimer += Time.deltaTime;
+            print("Flashing Overlay Slow-Motion");
+            if(overlay_SlowMotion.color == startColor) {
 
-            if (image_BorderSlowMotion.color == colorStart_BorderSlowMotion) {
+            overlay_SlowMotion.color = Color.Lerp(overlay_SlowMotion.color, flashColor, 80 * Time.deltaTime);
 
             }
-            else {
-                image_BorderSlowMotion.color = Color.Lerp(image_BorderSlowMotion.color, Color.clear, 2f * Time.deltaTime);
+            if (overlay_SlowMotion.color != startColor && flashTimer >= flashDuration){
+                print("Turning Overlay Slow-Motion Back to transparent");
+                overlay_SlowMotion.color = Color.Lerp(overlay_SlowMotion.color, startColor, 80 * Time.deltaTime);
+                if (overlay_SlowMotion.color == startColor) {
+                    flashTimer = 0f;
+                }
+
             }
+
+
+        } else {
+            overlayBorder.SetActive(false);
+            overlay_SlowMotion.color = overlay_SlowMotion.color = Color.Lerp(overlay_SlowMotion.color, startColor, 80 * Time.deltaTime);
         }
-        */
 
         /*if (takesDamage) {
             damageImage.color = flashColor;
