@@ -14,6 +14,7 @@ public class GameState : MonoBehaviour {
     public Image background_restartMenu;
 
     public GameObject highscoreTable;
+    public Config configScript;
 
     PlayerFuel playerFuel;
 
@@ -27,7 +28,7 @@ public class GameState : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		if (player.activeInHierarchy == false || playerFuel.playerFuel <= 0f ) {
+		if (player.activeInHierarchy == false || configScript.speed <= 0f ) {
             Time.timeScale = 1;
             gameOver = true;
         }

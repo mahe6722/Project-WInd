@@ -12,6 +12,7 @@ TagManager:
   - ExtraObstacle
   - Cog
   - Building
+  - PlayerProjectile
   layers:
   - Default
   - TransparentFX

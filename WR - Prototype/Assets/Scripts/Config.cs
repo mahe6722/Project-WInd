@@ -16,6 +16,7 @@ public class Config : MonoBehaviour
     public float timeToIncreaseDifficulty = 5;
 
     float playerFuel;
+    float oldSpeed;
 
     PlayerFuel playerFuelScript;
     MouseMovement mouseMovementScript;
@@ -40,7 +41,7 @@ public class Config : MonoBehaviour
     {
         if (playerFuelScript.playerFuel <= 0)
         {
-            speed -= 0.03f;
+            speed -= 0.0075f;
             if (speed <= 0)
             {
                 print("GameOver");

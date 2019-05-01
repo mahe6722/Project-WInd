@@ -39,6 +39,7 @@ GameObject:
   - component: {fileID: 4288717917199184}
   - component: {fileID: 212582359829004780}
   - component: {fileID: 61754056417959924}
+  - component: {fileID: 50662376504182230}
   m_Layer: 0
   m_Name: Fence4
   m_TagString: Fence
@@ -75,6 +76,7 @@ GameObject:
   - component: {fileID: 4703206402057686}
   - component: {fileID: 212417581499828814}
   - component: {fileID: 61683807476279564}
+  - component: {fileID: 50153336856487872}
   m_Layer: 0
   m_Name: Fence3
   m_TagString: Fence
@@ -92,6 +94,7 @@ GameObject:
   - component: {fileID: 4221872077073336}
   - component: {fileID: 212058253341636346}
   - component: {fileID: 61413524565926904}
+  - component: {fileID: 50342227280846234}
   m_Layer: 0
   m_Name: Fence2
   m_TagString: Fence
@@ -109,6 +112,7 @@ GameObject:
   - component: {fileID: 4499913485430104}
   - component: {fileID: 212054735872981466}
   - component: {fileID: 61068631685089640}
+  - component: {fileID: 50206093611821134}
   m_Layer: 0
   m_Name: Fence1
   m_TagString: Fence
@@ -230,6 +234,46 @@ Transform:
   m_Father: {fileID: 4659666840847674}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50153336856487872
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1556461503929750}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50206093611821134
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1957595116761664}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50247364951817626
 Rigidbody2D:
   serializedVersion: 4
@@ -237,6 +281,46 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217462699073806}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50342227280846234
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1825610086065182}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50662376504182230
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1494654400425184}
   m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
