@@ -6,27 +6,39 @@ public class DestroyOnContact : MonoBehaviour
 {
     void OnTriggerStay2D (Collider2D other)
     {
-        if (other.gameObject.tag == "Camp")
+        if (gameObject.tag == "Camp")
         {
-            print("Obstacle spawned in the camp - Disabling");
-            Destroy(gameObject);
+            if (other.gameObject.tag == "Obstacle")
+            {
+                print("Obstacle spawned in camp - Removing obstacle");
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.tag == "Fuel")
+            {
+                print("Fuel spawned in camp - Removing fuel");
+                Destroy(other.gameObject);
+            }
+            if (other.gameObject.tag == "Cog")
+            {
+                print("Cog spawned in camp - Removing cog");
+                Destroy(other.gameObject);
+            }
         }
 
-        if (other.gameObject.tag == "ExtraObstacle")
+        if (gameObject.tag == "Obstacle")
         {
-            print("Obstacles collided - Removing extra");
-            Destroy(other.gameObject);
-        }
-
-        if (other.gameObject.tag == "Fuel")
-        {
-            print("Fuel spawned on obstacle - Disabling the obstacle");
-            Destroy(gameObject);
-        }
-        if (other.gameObject.tag == "Cog") 
-        {
-            print("Cog spawned on obstacle - Disabling the obstacle");
-            Destroy(gameObject);
+            if (other.gameObject.tag == "Camp")
+            {
+                Destroy(gameObject);
+            }
+            if (other.gameObject.tag == "Fuel")
+            {
+                Destroy(gameObject);
+            }
+            if (other.gameObject.tag == "Cog")
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }

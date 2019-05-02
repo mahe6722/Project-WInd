@@ -4,54 +4,48 @@ using UnityEngine;
 
 public class ObstacleSpawner : MonoBehaviour
 {
-    public GameObject obstaclePrefab;
+    public GameObject[] obstacles;
 
     GameObject player;
 
-    public float respawnTime;
+    float respawnTime;
 
     float testSpeed;
 
     private Vector2 screenBounds;
-    private Vector3 obstaclePos;
 
     private IEnumerator coroutine;
 
+    int randomNumber;
+
     void Start()
     {
+        player = GameObject.Find("Player");
+
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
         coroutine = obstacleWave();
         StartCoroutine(coroutine);
-
-        obstaclePos = obstaclePrefab.transform.position;
-
-        player = GameObject.Find("Player");
     }
 
     //void Update()
     //{
     //}
 
-    private void spawnObstacle()
+    private void spawnObstacles()
     {
-        if (player.activeSelf)
-        {
-            GameObject obstacle = Instantiate(obstaclePrefab) as GameObject;
-            obstacle.transform.position = new Vector2(Random.Range(-screenBounds.x + 0.2f, screenBounds.x - 0.2f), screenBounds.y * 2);
-        }
-        else
-        {
-            StopCoroutine(coroutine);
-        }
+        int randomNumber = Random.Range(0, obstacles.Length);
+        transform.position = new Vector2(Random.Range(-screenBounds.x + 0.2f, screenBounds.x - 0.2f), screenBounds.y * 2);
+        Instantiate(obstacles[randomNumber], transform.position, Quaternion.identity);
     }
 
     IEnumerator obstacleWave()
     {
-        while (true)
+        while (player.activeSelf)
         {
+            respawnTime = Random.Range(1.5f, 3);
             yield return new WaitForSeconds(respawnTime);
-            spawnObstacle();
+            spawnObstacles();
         }
     }
 }

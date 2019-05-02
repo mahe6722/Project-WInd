@@ -60,7 +60,7 @@ public class CampSpawner : MonoBehaviour
     {
         while (player.activeSelf)
         {
-            respawnTime = Random.Range(3, 8);
+            respawnTime = Random.Range(5, 10);
             randomNumber = Random.Range(0, 2);
 
             yield return new WaitForSeconds(respawnTime);

@@ -15,6 +15,8 @@ public class Config : MonoBehaviour
 
     public float timeToIncreaseDifficulty = 5;
 
+    public bool freezeGame;
+
     float playerFuel;
     float oldSpeed;
     bool oneTime = false;
@@ -37,6 +39,8 @@ public class Config : MonoBehaviour
         mouseMovementScript = GameObject.Find("GameManager").GetComponent<MouseMovement>();
 
         player = GameObject.Find("Player");
+
+        freezeGame = false;
     }
 
     void Update()
@@ -64,6 +68,7 @@ public class Config : MonoBehaviour
             {
                 speed += 0.05f;
             }
+            oneTime = false;
         }
     }
 
@@ -76,8 +81,10 @@ public class Config : MonoBehaviour
 
     private void GameOver()
     {
-            print("GameOver");
-            mouseMovementScript.turnSpeed = 0f;
+        print("GameOver");
+        mouseMovementScript.turnSpeed = 0f;
+        player.SetActive(false);
+        freezeGame = true;
     }
 
     IEnumerator speedIncrease()
@@ -102,7 +109,7 @@ public class Config : MonoBehaviour
     IEnumerator scoreIncrease()
     {
         //Increases score by 1 every second
-        while (speed <= maxSpeed)
+        while (speed <= maxSpeed + 1)
         {
             yield return new WaitForSeconds(1);
             score++;
