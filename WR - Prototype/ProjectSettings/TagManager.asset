@@ -13,6 +13,7 @@ TagManager:
   - Cog
   - Building
   - PlayerProjectile
+  - Phase_Pickup
   layers:
   - Default
   - TransparentFX
