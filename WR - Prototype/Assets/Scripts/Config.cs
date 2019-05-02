@@ -17,6 +17,8 @@ public class Config : MonoBehaviour
 
     float playerFuel;
     float oldSpeed;
+    bool oneTime = false;
+    bool wasOutOfFuel = false;
 
     PlayerFuel playerFuelScript;
     MouseMovement mouseMovementScript;
@@ -41,14 +43,41 @@ public class Config : MonoBehaviour
     {
         if (playerFuelScript.playerFuel <= 0)
         {
-            speed -= 0.0075f;
+            wasOutOfFuel = true;
+            if (!oneTime)
+            {
+                oldSpeed = SaveSpeed(oldSpeed);
+            }
+            if (speed > 0)
+            {
+                speed -= 0.0075f;
+            }          
             if (speed <= 0)
             {
-                print("GameOver");
-                mouseMovementScript.turnSpeed = 0f;
-                //Time.timeScale = 0;
+                GameOver();
             }
         }
+
+        if (playerFuelScript.playerFuel > 0 && wasOutOfFuel)
+        {
+            if (speed < oldSpeed)
+            {
+                speed += 0.05f;
+            }
+        }
+    }
+
+    private float SaveSpeed(float oldSpeed)
+    {
+        oldSpeed = speed;
+        oneTime = true;
+        return oldSpeed;
+    }
+
+    private void GameOver()
+    {
+            print("GameOver");
+            mouseMovementScript.turnSpeed = 0f;
     }
 
     IEnumerator speedIncrease()
