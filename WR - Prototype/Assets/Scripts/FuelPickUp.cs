@@ -11,6 +11,8 @@ public class FuelPickUp : MonoBehaviour
     public SpriteRenderer fuelSprite;
     public BoxCollider2D fuelCollider;
 
+    public GameObject pickupEffect;
+
     private void Start()
     {
         playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
@@ -39,6 +41,7 @@ public class FuelPickUp : MonoBehaviour
             fuelSprite.enabled = false;
             fuelCollider.enabled = false;
             fuelSound.Play();
+            Instantiate(pickupEffect, transform.position, transform.rotation);
 
             playerFuelScript.playerFuel += containerSize;
 

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61053069554710082}
   - component: {fileID: 50247364951817626}
   m_Layer: 0
-  m_Name: Building1
+  m_Name: Building2
   m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1825610086065182}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15, y: 2, z: 0}
+  m_LocalPosition: {x: -0.67, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 4659666840847674}
@@ -157,7 +157,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1494654400425184}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.15000002, y: 3.95, z: 0}
+  m_LocalPosition: {x: -0.75, y: 3.95, z: 0}
   m_LocalScale: {x: 1, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 4659666840847674}
@@ -183,7 +183,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1981304479549414}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.08812894, y: -0.29869354, z: -0}
+  m_LocalPosition: {x: -0.053277493, y: -1.4245627, z: -0}
   m_LocalScale: {x: -0.75, y: 0.75, z: 0.75}
   m_Children:
   - {fileID: 4499913485430104}
@@ -215,8 +215,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1217462699073806}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.65, y: 3.11, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: 3.18, y: 4.1, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4659666840847674}
   m_RootOrder: 4
@@ -228,7 +228,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1523636441054786}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.2, y: 2, z: 0}
+  m_LocalPosition: {x: 0.36, y: 2, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 4659666840847674}
@@ -346,18 +346,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.62, y: -0.64}
+  m_Offset: {x: -0, y: -0.64}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 38.399998, y: 27.58}
+    oldSize: {x: 38.399998, y: 21.599998}
     newSize: {x: 0.2, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 24}
+  m_Size: {x: 10, y: 15}
   m_EdgeRadius: 0
 --- !u!61 &61068631685089640
 BoxCollider2D:
@@ -496,7 +496,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.34, y: 2.44}
+  m_Offset: {x: 2.34, y: 3.73}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -507,7 +507,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 5.5, y: 7}
+  m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
 --- !u!82 &82994972798904256
 AudioSource:
@@ -619,6 +619,8 @@ MonoBehaviour:
   fuelSound: {fileID: 0}
   fuelSprite: {fileID: 0}
   fuelCollider: {fileID: 0}
+  pickupEffect: {fileID: 1101264473618594, guid: 246586e9b0eecb24a9c95c7bbe8c2c8b,
+    type: 2}
 --- !u!114 &114803774794779802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -757,7 +759,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 33b4cebb342ad7246b473da850b8a5d5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dfb105046b6fb67488534b9d6982b81a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

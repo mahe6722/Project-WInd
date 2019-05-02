@@ -212,6 +212,8 @@ MonoBehaviour:
   fuelSound: {fileID: 0}
   fuelSprite: {fileID: 0}
   fuelCollider: {fileID: 0}
+  pickupEffect: {fileID: 1101264473618594, guid: 246586e9b0eecb24a9c95c7bbe8c2c8b,
+    type: 2}
 --- !u!114 &114802247006903858
 MonoBehaviour:
   m_ObjectHideFlags: 1
