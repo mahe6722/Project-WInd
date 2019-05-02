@@ -434,7 +434,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 49c08bb669579f5459b0cc61d892c9f4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 0e7e6acbb842d224e848700c6dfea410, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.15
   m_Pitch: 1
@@ -535,6 +535,8 @@ MonoBehaviour:
   fuelSound: {fileID: 0}
   fuelSprite: {fileID: 0}
   fuelCollider: {fileID: 0}
+  pickupEffect: {fileID: 1101264473618594, guid: b6895fb517ea73c42ab8cd82632dd899,
+    type: 2}
 --- !u!114 &114803774794779802
 MonoBehaviour:
   m_ObjectHideFlags: 1
