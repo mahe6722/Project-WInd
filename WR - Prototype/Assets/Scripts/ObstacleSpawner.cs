@@ -43,7 +43,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         while (player.activeSelf)
         {
-            respawnTime = Random.Range(1.5f, 3);
+            respawnTime = Random.Range(0.5f, 2);
             yield return new WaitForSeconds(respawnTime);
             spawnObstacles();
         }

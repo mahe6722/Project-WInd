@@ -8,7 +8,7 @@ public class DestroyOnContactCamp : MonoBehaviour
     {
         if (other.gameObject.tag == "Obstacle")
         {
-            print("Obstacle spawned in camp - Removing obstacle");
+            //print("Obstacle spawned in camp - Removing obstacle");
             Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Fuel")

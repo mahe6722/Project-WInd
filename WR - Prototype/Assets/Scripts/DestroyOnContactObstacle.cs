@@ -13,12 +13,12 @@ public class DestroyOnContactObstacle : MonoBehaviour {
         //}
         if (other.gameObject.tag == "Fuel")
         {
-            print("Fuel spawned in obstacle - Removing obstacle");
-            Destroy(gameObject);
+            //print("Fuel spawned in obstacle - Removing obstacle");
+            Destroy(other.gameObject);
         }
         if (other.gameObject.tag == "Cog")
         {
-            print("Cog spawned in obstacle - Removing cog");
+            //print("Cog spawned in obstacle - Removing cog");
             Destroy(other.gameObject);
         }
     }
