@@ -23,9 +23,9 @@ GameObject:
   - component: {fileID: 61905419745793784}
   - component: {fileID: 114688883988854406}
   - component: {fileID: 114802247006903858}
-  - component: {fileID: 114370552284419578}
   - component: {fileID: 50802584723778490}
   - component: {fileID: 82947917195290444}
+  - component: {fileID: 114004588587652124}
   m_Layer: 0
   m_Name: Fuel_Small
   m_TagString: Fuel
@@ -75,7 +75,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.4, y: 0}
@@ -89,7 +89,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3, y: 5}
+  m_Size: {x: 3.25, y: 5}
   m_EdgeRadius: 0
 --- !u!82 &82947917195290444
 AudioSource:
@@ -186,7 +186,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &114370552284419578
+--- !u!114 &114004588587652124
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1605799198275396}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407fc29cbb374af4197d1ccf147a7910, type: 3}
+  m_Script: {fileID: 11500000, guid: 6156541373ab71a4790649a27975d5d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114688883988854406

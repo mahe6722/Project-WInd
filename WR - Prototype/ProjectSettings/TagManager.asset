@@ -14,6 +14,9 @@ TagManager:
   - Building
   - PlayerProjectile
   - Phase_Pickup
+  - SafetyCollider
+  - CampFuel
+  - CampCog
   layers:
   - Default
   - TransparentFX
@@ -23,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - AbovePlayer
   - 
   - 
   - 

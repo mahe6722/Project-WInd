@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 82255275058122730}
   m_Layer: 0
   m_Name: Fuel
-  m_TagString: Fuel
+  m_TagString: CampFuel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -405,7 +405,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10, y: 20.2}
+  m_Size: {x: 9, y: 20.2}
   m_EdgeRadius: 0
 --- !u!61 &61648974468349260
 BoxCollider2D:
@@ -430,7 +430,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.12}
+  m_Size: {x: 0.06, y: 0.1}
   m_EdgeRadius: 0
 --- !u!61 &61653431981277650
 BoxCollider2D:
@@ -455,7 +455,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.16}
+  m_Size: {x: 0.1, y: 0.06}
   m_EdgeRadius: 0
 --- !u!61 &61823897252797056
 BoxCollider2D:
@@ -505,7 +505,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.12}
+  m_Size: {x: 0.06, y: 0.1}
   m_EdgeRadius: 0
 --- !u!61 &61953011769898588
 BoxCollider2D:
@@ -530,7 +530,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12, y: 0.16}
+  m_Size: {x: 0.1, y: 0.06}
   m_EdgeRadius: 0
 --- !u!61 &61975892179344210
 BoxCollider2D:
@@ -555,7 +555,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 7, y: 6.04}
+  m_Size: {x: 6.5, y: 6.04}
   m_EdgeRadius: 0
 --- !u!82 &82255275058122730
 AudioSource:

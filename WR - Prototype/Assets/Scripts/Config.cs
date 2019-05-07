@@ -11,10 +11,12 @@ public class Config : MonoBehaviour
     public int score = 0;
 
     public float maxSpeed;
-    public float speedIncrement;
+    float speedIncrement = 0;
 
+    public float startIncreasingSpeed;
     public float timeToIncreaseDifficulty = 5;
 
+    float timeCounter;
     float playerFuel;
     float oldSpeed;
     bool oneTime = false;
@@ -41,6 +43,16 @@ public class Config : MonoBehaviour
 
     void Update()
     {
+        if (player.activeSelf)
+        {
+            timeCounter += Time.deltaTime;
+        }
+
+        if (timeCounter >= startIncreasingSpeed && player.activeSelf == true)
+        {
+            speedIncrement = 0.15f;
+        }
+
         if (playerFuelScript.playerFuel <= 0)
         {
             wasOutOfFuel = true;
@@ -111,7 +123,7 @@ public class Config : MonoBehaviour
         //Increases score by 1 every second
         while (speed <= maxSpeed + 1)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.05f);
             score++;
             if (speed <= 0 || player.activeInHierarchy == false)
             {

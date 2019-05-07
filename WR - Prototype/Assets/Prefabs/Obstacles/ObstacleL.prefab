@@ -21,9 +21,10 @@ GameObject:
   - component: {fileID: 4750798676943012}
   - component: {fileID: 50543542767827826}
   - component: {fileID: 70869889006693880}
+  - component: {fileID: 114168513744483526}
   m_Layer: 0
   m_Name: SafetyCollider
-  m_TagString: Untagged
+  m_TagString: SafetyCollider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,9 +39,9 @@ GameObject:
   - component: {fileID: 4294879329382096}
   - component: {fileID: 212375149173766114}
   - component: {fileID: 114449863830998106}
-  - component: {fileID: 114536001022449888}
   - component: {fileID: 50150947888748208}
   - component: {fileID: 70045606991521902}
+  - component: {fileID: 114284010078070738}
   m_Layer: 0
   m_Name: ObstacleL
   m_TagString: Obstacle
@@ -102,7 +103,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1038226208603764}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -145,6 +146,28 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 14, y: 18}
   m_Direction: 0
+--- !u!114 &114168513744483526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1038226208603764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace7aee51664a954b93c26eed3384bdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114284010078070738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1324870906096678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41921fcca084cb4aadf298f81f1867a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114449863830998106
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -154,17 +177,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d70de5de46ce8a545ade459696b6b693, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114536001022449888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1324870906096678}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace7aee51664a954b93c26eed3384bdf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!212 &212375149173766114

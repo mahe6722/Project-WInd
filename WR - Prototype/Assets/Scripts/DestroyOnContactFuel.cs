@@ -11,5 +11,10 @@ public class DestroyOnContactFuel : MonoBehaviour
             //print("Cog spawned in obstacle - Removing cog");
             Destroy(other.gameObject);
         }
+        if (other.gameObject.tag == "SafetyCollider")
+        {
+            print("sdgjkbsdhkgfskjg");
+            Destroy(other.gameObject);
+        }
     }
 }

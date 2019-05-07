@@ -4,17 +4,27 @@ using UnityEngine;
 
 public class CampSpawner : MonoBehaviour
 {
-    public GameObject campPrefabLeft;
-    public GameObject campPrefabRight;
+    public GameObject[] camps;
+
+    //public GameObject campPrefabLeft;
+    //public GameObject campPrefabRight;
 
     GameObject player;
 
     float respawnTime;
-    int randomNumber;
 
     private Vector2 screenBounds;
 
     private IEnumerator coroutine;
+
+    int randomNumber;
+    int counter;
+
+    int easyMode = 2;
+    int mediumMode = 6;
+    int hardMode = 8;
+
+    int spawnLimit;
 
     void Start()
     {
@@ -24,36 +34,35 @@ public class CampSpawner : MonoBehaviour
 
         coroutine = campWave();
         StartCoroutine(coroutine);
+
+        spawnLimit = easyMode;
     }
 
-    //void Update()
-    //{
-    //}
-
-    private void spawnCampLeft()
+    void Update()
     {
-        if (player.activeSelf)
+        if (counter > 5)
         {
-            GameObject campLeft = Instantiate(campPrefabLeft) as GameObject;
-            campLeft.transform.position = new Vector2(-0.48f, screenBounds.y * 2);
+            spawnLimit = mediumMode;
         }
-        else
+        if (counter > 10)
         {
-            StopCoroutine(coroutine);
+            spawnLimit = hardMode;
         }
     }
 
-    private void spawnCampRight()
+    private void spawnCamps()
     {
-        if (player.activeSelf)
+        int randomNumber = Random.Range(0, spawnLimit);
+        if (randomNumber == 1) //Left
         {
-            GameObject campRight = Instantiate(campPrefabRight) as GameObject;
-            campRight.transform.position = new Vector2(0.48f, screenBounds.y * 2);
+            transform.position = new Vector2(-0.48f, screenBounds.y * 2);
         }
-        else
+        else if (randomNumber == 2) //Right
         {
-            StopCoroutine(coroutine);
+            transform.position = new Vector2(0.48f, screenBounds.y * 2);
         }
+        Instantiate(camps[randomNumber], transform.position, Quaternion.identity);
+        counter++;
     }
 
     IEnumerator campWave()
@@ -61,17 +70,8 @@ public class CampSpawner : MonoBehaviour
         while (player.activeSelf)
         {
             respawnTime = Random.Range(5, 10);
-            randomNumber = Random.Range(0, 2);
-
             yield return new WaitForSeconds(respawnTime);
-            if (randomNumber == 0)
-            {
-                spawnCampLeft();
-            }
-            else if (randomNumber == 1)
-            {
-                spawnCampRight();
-            }
+            spawnCamps();
         }
     }
 }

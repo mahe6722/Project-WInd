@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4867580513706454}
   - component: {fileID: 212533272836963958}
   - component: {fileID: 114086606076272366}
-  - component: {fileID: 114264717045139322}
   - component: {fileID: 50258901673633352}
   - component: {fileID: 70135996778402732}
+  - component: {fileID: 114058035278397654}
   m_Layer: 0
   m_Name: ObstacleFlippedM
   m_TagString: Obstacle
@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 4572754101729364}
   - component: {fileID: 50481668936326146}
   - component: {fileID: 70741723166562970}
+  - component: {fileID: 114513875221784954}
   m_Layer: 0
   m_Name: SafetyCollider
   m_TagString: SafetyCollider
@@ -145,6 +146,17 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 14, y: 18}
   m_Direction: 0
+--- !u!114 &114058035278397654
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1367634327012134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41921fcca084cb4aadf298f81f1867a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114086606076272366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,12 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d70de5de46ce8a545ade459696b6b693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114264717045139322
+--- !u!114 &114513875221784954
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1367634327012134}
+  m_GameObject: {fileID: 1828300415344504}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ace7aee51664a954b93c26eed3384bdf, type: 3}
