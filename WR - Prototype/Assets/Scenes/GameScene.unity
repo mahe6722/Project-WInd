@@ -156,6 +156,11 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114310935062587720, guid: 88314622e15515a4aa6f2adc58d9dfef,
+        type: 2}
+      propertyPath: duration_EngineStutter
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88314622e15515a4aa6f2adc58d9dfef, type: 2}
   m_IsPrefabAsset: 0
