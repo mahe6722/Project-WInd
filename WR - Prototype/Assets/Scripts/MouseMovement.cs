@@ -21,7 +21,7 @@ public class MouseMovement : MonoBehaviour {
         playerRigidBody = player.GetComponent<Rigidbody2D>();
     }
 
-    void Update ()
+    void FixedUpdate ()
     {       
         inputMouseX = Input.GetAxis("Mouse X"); //Debug Mouse Input
 
