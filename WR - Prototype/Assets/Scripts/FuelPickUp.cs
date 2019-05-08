@@ -38,10 +38,10 @@ public class FuelPickUp : MonoBehaviour
     private void CheckSizeFuelContainer()
     {
         //This is current size of fuel in camps, change if Fuel is made bigger. Use another "if" for the small size.
-        if (transform.localScale.x >= 0.2 && transform.localScale.y >= 0.2) {
+        if (transform.localScale.x >= 0.07 && transform.localScale.y >= 0.07) {
             containerSize = 25;
         }
-        if (transform.localScale.x == 0.1f && transform.localScale.y == 0.1f) {
+        if (transform.localScale.x == 0.04f && transform.localScale.y == 0.04f) {
           containerSize = 10;
         }
     }
