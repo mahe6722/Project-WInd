@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744630046564520}
   - component: {fileID: 198003917635939880}
+  - component: {fileID: 114310935062587720}
   - component: {fileID: 199006377209892556}
   m_Layer: 0
   m_Name: Trail Effect
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114310935062587720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040155104548896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 077c5d09b71ed6b40971b40275d95a34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198003917635939880
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1261,7 +1273,7 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.18823531, g: 0.7058824, b: 0.627451, a: 1}
+        key0: {r: 0.86274517, g: 0.08235294, b: 0.21568629, a: 1}
         key1: {r: 0, g: 0, b: 0, a: 1}
         key2: {r: 0.16025098, g: 0.96739274, b: 0.77635026, a: 1}
         key3: {r: 0.1607843, g: 0.6302913, b: 1, a: 0}
