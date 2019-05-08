@@ -48,27 +48,29 @@ public class CampSpawner : MonoBehaviour
         {
             spawnLimit = hardMode;
         }
+        randomNumber = Random.Range(0, spawnLimit);
     }
 
-    private void spawnCamps()
+    private void spawnCamps(int randomNumber)
     {
-        int randomNumber = Random.Range(0, spawnLimit);
-        if (randomNumber == 1) //Left
+
+        if (randomNumber == 0) //Left
         {
             transform.position = new Vector2(-0.48f, screenBounds.y * 2);
         }
-        else if (randomNumber == 2) //Right
+        if (randomNumber == 1) //Right
         {
             transform.position = new Vector2(0.48f, screenBounds.y * 2);
         }
-        else if (randomNumber > 2 && randomNumber < 7) //Med
+        if (randomNumber > 1 && randomNumber < 6) //Med
         {
             transform.position = new Vector2(0, screenBounds.y * 3);
         }
-        else if (randomNumber > 6 && randomNumber < 9) //Hard
+        if (randomNumber > 5 && randomNumber < 8) //Hard
         {
             transform.position = new Vector2(0, screenBounds.y * 3);
         }
+        print("Spawning Camp!" + randomNumber);
         Instantiate(camps[randomNumber], transform.position, Quaternion.identity);
         counter++;
     }
@@ -79,7 +81,7 @@ public class CampSpawner : MonoBehaviour
         {
             respawnTime = Random.Range(5, 10);
             yield return new WaitForSeconds(respawnTime);
-            spawnCamps();
+            spawnCamps(randomNumber);
         }
     }
 }
