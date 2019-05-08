@@ -48,24 +48,21 @@ public class FuelPickUp : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (player.activeSelf)
+        if (player != null && other.tag == "Player")
         {
-            if (other.tag == "Player")
+            fuelSprite.enabled = false;
+            fuelCollider.enabled = false;
+            fuelSound.Play();
+            Instantiate(pickupEffect, transform.position, transform.rotation);
+
+            playerFuelScript.playerFuel += containerSize;
+
+            print("Player picked up the fuel!");
+
+            if (!fuelSound.isPlaying)
             {
-                fuelSprite.enabled = false;
-                fuelCollider.enabled = false;
-                fuelSound.Play();
-                Instantiate(pickupEffect, transform.position, transform.rotation);
-
-                playerFuelScript.playerFuel += containerSize;
-
-                print("Player picked up the fuel!");
-
-                if (!fuelSound.isPlaying)
-                {
-                    Destroy(gameObject);
-                }
+                Destroy(gameObject);
             }
         }
-    }
+    }   
 }
