@@ -939,7 +939,7 @@ Prefab:
     - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
       propertyPath: camps.Array.size
-      value: 2
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114403551027272368, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
@@ -1191,6 +1191,48 @@ Prefab:
       propertyPath: camps.Array.data[1]
       value: 
       objectReference: {fileID: 1300642638166124, guid: 1f8826abb99a3ed42ab36220a5708e0d,
+        type: 2}
+    - target: {fileID: 114215188732600298, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: smallFuelPrefab
+      value: 
+      objectReference: {fileID: 1605799198275396, guid: 07e85d05bcf02a140b5240811bb671b6,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[2]
+      value: 
+      objectReference: {fileID: 1510833326029214, guid: 9d14d5fee5b130b4fa3339c06eccca46,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[3]
+      value: 
+      objectReference: {fileID: 1683495481300176, guid: 1b48124c02e7a234394dcebebe0eccec,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[4]
+      value: 
+      objectReference: {fileID: 1957243962464426, guid: 7b0fb179427347b4d89c366b920318d3,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[5]
+      value: 
+      objectReference: {fileID: 1205053972432960, guid: 89ac021149b23644ba3821e588fe6995,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[6]
+      value: 
+      objectReference: {fileID: 1206898964014068, guid: 09f78cd1fe73a7f4b98500d484e750a9,
+        type: 2}
+    - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
+        type: 2}
+      propertyPath: camps.Array.data[7]
+      value: 
+      objectReference: {fileID: 1986371937642788, guid: 2123379b3edb7ba41bf4f2c22378f520,
         type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 978e78cdaa551d548bf706e6cb1e679f, type: 2}

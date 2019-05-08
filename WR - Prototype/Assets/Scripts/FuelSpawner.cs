@@ -2,35 +2,52 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FuelSpawner : MonoBehaviour {
+public class FuelSpawner : MonoBehaviour
+{
+    public GameObject smallFuelPrefab;
+
+    GameObject player;
 
     public float respawnTime;
-    public float timerRespawn;
 
-    private float randomX;
+    private Vector2 screenBounds;
 
-    public GameObject fuel_small;
-    public GameObject player;
+    private IEnumerator coroutine;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
+	void Start ()
     {
-        timerRespawn += Time.deltaTime;
+        player = GameObject.Find("Player");
 
-        randomX = Random.Range(-4, 4);
+        screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
 
-        transform.position = new Vector2(randomX, 7); 
+        coroutine = fuelWave();
+        StartCoroutine(coroutine);
+    }
+	
+	//void Update ()
+    //{
+	//}
 
-
-        if(timerRespawn >= respawnTime && player.activeInHierarchy == true) 
+    private void spawnFuel()
+    {
+        if (player.activeSelf)
         {
-            Instantiate(fuel_small, transform.position, transform.rotation);
-            timerRespawn = 0;
+            GameObject fuel = Instantiate(smallFuelPrefab) as GameObject;
+            fuel.transform.position = new Vector2(Random.Range(-screenBounds.x + 0.2f, screenBounds.x - 0.2f), screenBounds.y * 2);
         }
-	}
+        else
+        {
+            StopCoroutine(coroutine);
+        }
+    }
+
+    IEnumerator fuelWave()
+    {
+        while (player.activeSelf)
+        {
+            yield return new WaitForSeconds(respawnTime);
+            spawnFuel();
+        }
+    }
+
 }

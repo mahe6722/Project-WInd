@@ -61,6 +61,14 @@ public class CampSpawner : MonoBehaviour
         {
             transform.position = new Vector2(0.48f, screenBounds.y * 2);
         }
+        else if (randomNumber > 2 && randomNumber < 7) //Med
+        {
+            transform.position = new Vector2(0, screenBounds.y * 3);
+        }
+        else if (randomNumber > 6 && randomNumber < 9) //Hard
+        {
+            transform.position = new Vector2(0, screenBounds.y * 3);
+        }
         Instantiate(camps[randomNumber], transform.position, Quaternion.identity);
         counter++;
     }
