@@ -1030,7 +1030,7 @@ Prefab:
     - target: {fileID: 114025647402804634, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
       propertyPath: respawnTime
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 114391167815739480, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
@@ -1158,7 +1158,7 @@ Prefab:
     - target: {fileID: 114215188732600298, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
       propertyPath: respawnTime
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 114025647402804634, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
