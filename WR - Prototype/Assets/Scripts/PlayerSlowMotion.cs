@@ -122,8 +122,8 @@ public class PlayerSlowMotion : MonoBehaviour {
             slowmotionReady = false;
 
             //Changing UI color when Slow Motion on cooldown.
-            colorChangeFill.a = 0.4f;
-            colorChangeBorder.a = 0.4f;
+            colorChangeFill.a = 0.2f;
+            colorChangeBorder.a = 0.2f;
             image_SlowMotionUI.color = colorChangeFill;
             image_SlowMotionUIBorder.color = colorChangeBorder;
         }

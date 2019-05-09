@@ -7,8 +7,9 @@ public class PlayerFuel : MonoBehaviour {
 
     public float playerFuel;
     public float fuelConsumption;
-    public Slider fuelUI;
-    public Image fuelBar;
+
+    public Image image_Fuel_Filled;
+    public Image image_Fuel_Border; //Outline for Bar
 
     float flashTimer;
     public float flashDuration;
@@ -18,8 +19,7 @@ public class PlayerFuel : MonoBehaviour {
 	
     void Start()
     {
-        fuelBar = GameObject.Find("FuelBar").GetComponent<Image>();
-        fuelBarStartColor = fuelBar.color;
+        
 
     //    playerFuel = Config.fuel;
     }
@@ -30,37 +30,35 @@ public class PlayerFuel : MonoBehaviour {
         FuelManager();
 
         //Set Fuel UI to value of playerFuel.
-        fuelUI.value = playerFuel;
+        image_Fuel_Filled.fillAmount = (playerFuel);
     }
 
     private void FuelManager()
     {
         //Only consume fuel if you have fuel.
-        if (playerFuel > 0) {
+        if (playerFuel > 0f) {
             playerFuel -= fuelConsumption * Time.deltaTime;
         }
         //Give console message, Out of Fuel and make sure fuel is exactly 0.
-        if (playerFuel <= 0)
-        {
-            //print("Out of Fuel");
+        if (playerFuel <= 0f) {
+            print("Out of Fuel");
             playerFuel = 0;
         }
 
         //If Fuel is more than 100, make it 100.
-        if (playerFuel > 100) {
-            playerFuel = 100;
+        if (playerFuel > 1) {
+            playerFuel = 1;
         }
 
-        if (playerFuel < 40) {
+        if (playerFuel < 0.4) {
             flashTimer += Time.deltaTime;
-            if(playerFuel <= 20) {
+            if (playerFuel <= 0.20) {
                 flashSpeed = 8;
-            }
-            else if (playerFuel > 20) {
+            } else if (playerFuel > 0.20) {
                 flashSpeed = 4;
             }
 
-            if (fuelBar.color == fuelBarStartColor) {
+            /*if (fuelBar.color == fuelBarStartColor) {
 
                 fuelBar.color = new Color(0.7f, 0f, 0f, 1);
 
@@ -76,7 +74,8 @@ public class PlayerFuel : MonoBehaviour {
         }
         else if (playerFuel > 40) {
             fuelBar.color = fuelBarStartColor;
+        }*/
+
         }
-        
     }
 }

@@ -25,7 +25,7 @@ public class PlayerTrailManager : MonoBehaviour {
 
         timer_EngineStutter += Time.deltaTime;
 
-        if (playerFuelScript.playerFuel < 30) {
+        if (playerFuelScript.playerFuel < 0.35) {
             colorModule.color = Color.black;
 
             if(timer_EngineStutter > duration_EngineStutter && engineTrail.isPlaying) {
@@ -41,7 +41,7 @@ public class PlayerTrailManager : MonoBehaviour {
             colorModule.color = Color.cyan;
         }
 
-        else if(playerFuelScript.playerFuel >= 30) {
+        else if(playerFuelScript.playerFuel >= 0.35) {
             colorModule.color = startColor_Engine;
             if (!engineTrail.isPlaying) {
                 engineTrail.Play();

@@ -1,8 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPhaseShift : MonoBehaviour {
+
+    public Image image_PhaseShift_Ready;
+    public Image image_PhaseShift_Activated;
+    public Image image_PhaseShift_Cooldown;
+
+    bool phaseShift_ready;
+    bool phaseShift_activated;
+    bool phaseShift_cooldown;
 
     PlayerFuel playerFuelScript;
     float fuelConsumption;
@@ -42,6 +51,16 @@ public class PlayerPhaseShift : MonoBehaviour {
     void Update () {
 
         timer_cooldown += Time.deltaTime;
+
+        //Ability Ready
+        if(timer_cooldown > cooldown_phaseShift) {
+            phaseShift_cooldown = false;
+            phaseShift_ready = true;
+        }
+        else {
+            phaseShift_ready = false;
+        }
+
         if (portalEntrance == 1) {
             timer_duration += Time.deltaTime;
             playerFuelScript.fuelConsumption = 0f;
@@ -50,7 +69,9 @@ public class PlayerPhaseShift : MonoBehaviour {
             playerFuelScript.fuelConsumption = fuelConsumption;
         }
 
-		if (Input.GetKey(KeyCode.W) && timer_cooldown > cooldown_phaseShift) {
+		if (Input.GetKey(KeyCode.W) && phaseShift_ready) {
+            //Ability Activated
+            phaseShift_activated = true;
             print("Entering Other Dimension");
             
 
@@ -73,6 +94,9 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         }
         if (timer_duration > duration_phaseShift) {
+            //Ability on Cooldown
+            phaseShift_activated = false;
+            phaseShift_cooldown = true;
             print("Returning From Dimension");
 
             foreach (BoxCollider2D boxCollider in playerBoxColliders) {
@@ -93,6 +117,18 @@ public class PlayerPhaseShift : MonoBehaviour {
             }
             timer_cooldown = 0f;
             timer_duration = 0f;
+        }
+
+        //Phase UI
+        if (phaseShift_ready) {
+            image_PhaseShift_Ready.enabled = true;
+        }
+        if (phaseShift_activated) {
+            image_PhaseShift_Ready.enabled = false;
+        }
+        if (phaseShift_cooldown) {
+            image_PhaseShift_Ready.enabled = false;
+            image_PhaseShift_Activated.fillAmount = timer_cooldown/cooldown_phaseShift;
         }
 	}
 }
