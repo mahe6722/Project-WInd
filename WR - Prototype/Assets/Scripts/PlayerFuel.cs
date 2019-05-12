@@ -11,6 +11,8 @@ public class PlayerFuel : MonoBehaviour {
     public Image image_Fuel_Filled;
     public Image image_Fuel_Border; //Outline for Bar
 
+    public GameObject warningFuelUI;
+
     float flashTimer;
     public float flashDuration;
     public float flashSpeed;
@@ -45,15 +47,20 @@ public class PlayerFuel : MonoBehaviour {
             playerFuel = 0;
         }
 
-        //If Fuel is more than 100, make it 100.
+        //If Fuel is more than 1 make it 1.
         if (playerFuel > 1) {
             playerFuel = 1;
         }
 
         if (playerFuel < 0.4) {
+            //TURN WARNING TRIANGLE ON.
+            warningFuelUI.SetActive(true);
+
             flashTimer += Time.deltaTime;
+
             if (playerFuel <= 0.20) {
                 flashSpeed = 8;
+
             } else if (playerFuel > 0.20) {
                 flashSpeed = 4;
             }
@@ -70,12 +77,12 @@ public class PlayerFuel : MonoBehaviour {
                 if (fuelBar.color == fuelBarStartColor) {
                     flashTimer = 0f;
                 }
-            }
+            }*/
         }
-        else if (playerFuel > 40) {
-            fuelBar.color = fuelBarStartColor;
-        }*/
+        else if (playerFuel > 0.4) {
+                    //fuelBar.color = fuelBarStartColor;
+                    warningFuelUI.SetActive(false);
+        }
 
-        }
     }
 }
