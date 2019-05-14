@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NewMainMenu.unity
     guid: c0ebafdb8b3c93d43aea3a5c6a1388b4
   - enabled: 1
+    path: Assets/Scenes/BluePrintScene.unity
+    guid: 669cf969f1e324e46bf6d3e2763bca56
+  - enabled: 1
     path: Assets/Scenes/GameScene.unity
     guid: dd95397da3644484c9e87328b996b61b
   m_configObjects: {}
