@@ -22,6 +22,10 @@ public class PlayerPhaseShift : MonoBehaviour {
     public SpriteRenderer dimensionSprite;
     public GameObject playerTrailEffect;
 
+    public BoxCollider2D SafetyCollider_PhaseShift;
+    public bool insideObstacle;
+    
+
     public GameObject phasePortal;
     int portalEntrance = 0;
     int portalExit = 0;
@@ -44,6 +48,8 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         playerTrailEffect = GameObject.Find("Trail Effect");
 
+        SafetyCollider_PhaseShift = GetComponent<BoxCollider2D>();
+
 
     }
 
@@ -62,7 +68,9 @@ public class PlayerPhaseShift : MonoBehaviour {
         }
 
         if (portalEntrance == 1) {
+            if(insideObstacle == false) {
             timer_duration += Time.deltaTime;
+            }
             playerFuelScript.fuelConsumption = 0f;
         }
         if (portalExit == 1) {
@@ -93,7 +101,7 @@ public class PlayerPhaseShift : MonoBehaviour {
             }
 
         }
-        if (timer_duration > duration_phaseShift) {
+        if (timer_duration > duration_phaseShift && insideObstacle == false) {
             //Ability on Cooldown
             phaseShift_activated = false;
             phaseShift_cooldown = true;
@@ -131,4 +139,31 @@ public class PlayerPhaseShift : MonoBehaviour {
             image_PhaseShift_Activated.fillAmount = timer_cooldown/cooldown_phaseShift;
         }
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fence" || collision.gameObject.tag == "Building" || collision.gameObject.tag == "Obstacle") {
+            print("PHASE COLLISION");
+            insideObstacle = true;
+            timer_duration = 0f;
+        }
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fence" || collision.gameObject.tag == "Building" || collision.gameObject.tag == "Obstacle") {
+            print("PHASE COLLISION STAY");
+            insideObstacle = true;
+            timer_duration = 0f;
+        }
+       
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fence" || collision.gameObject.tag == "Building" || collision.gameObject.tag == "Obstacle") {
+            print("NO COLLISION");
+
+            insideObstacle = false;
+            timer_duration = 0f;
+        }
+    }
 }
