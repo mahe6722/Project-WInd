@@ -63,7 +63,7 @@ public class RestartMenu : MonoBehaviour {
 
     private void MenuButtonInteraction()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && textRestartMenu.activeInHierarchy == true) {
+        if (Input.anyKey && textRestartMenu.activeInHierarchy == true) {
 
             //If RESTART is highlighted, Restart Game.
             if (text_Restart.color == colorPressed) {
@@ -84,7 +84,7 @@ public class RestartMenu : MonoBehaviour {
             text_MainMenu.color = colorPressed;
             text_Restart.color = colorStart;
         }
-        if (MastMovement.tilt < 10) {
+        if (MastMovement.tilt < 5) {
             text_Restart.color = colorPressed;
             text_MainMenu.color = colorStart;
         }

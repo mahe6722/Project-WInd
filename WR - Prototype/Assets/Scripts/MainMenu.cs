@@ -6,28 +6,28 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
-    public Text text_Play;
-    public Text text_HighScores;
-    public Text text_MastCalibration;
-    public Text text_Quit;
-    public GameObject textMainMenu;
+    public Image image_Play;
+    public Image image_HighScores;
+    
+   // public GameObject textMainMenu;
 
-    public Color colorStart;
-    public Color colorPressed;
+    public Color colorHighlight;
+    public Color colorNotPressed;
 
    
 
     // Use this for initialization
     void Start () {
 
-        colorStart = text_Quit.color;
-        colorPressed = text_Play.color;
+        colorHighlight = image_Play.color;
+        colorNotPressed = image_HighScores.color;
 
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        
         //Tilt Right to scroll down, Tilt back towards middle to scroll up!
         HighlightMenuButtons();
         MenuButtonInteractions();
@@ -36,52 +36,33 @@ public class MainMenu : MonoBehaviour {
 
     private void MenuButtonInteractions()
     {
-        if (Input.GetKey(KeyCode.Space) && textMainMenu.activeInHierarchy == true) {
+        if (Input.anyKey) {
 
-            if (text_Play.color == colorPressed) {
+            if (image_Play.color == colorHighlight) {
                 SceneManager.LoadScene(1);
             }
 
-            if (text_HighScores.color == colorPressed) {
+            if (image_HighScores.color == colorHighlight) {
                 print("SHOWING HIGHSCORES");
             }
 
-            if (text_MastCalibration.color == colorPressed) {
-                print("CALIBRATE MAST");
-            }
-
-            if (text_Quit.color == colorPressed) {
-                print("Quit Application");
-                Application.Quit();
-            }
         }
     }
 
     private void HighlightMenuButtons()
     {
-        if (MastMovement.tilt < 10) {
-            text_Play.color = colorPressed;
-            text_HighScores.color = colorStart;
-            text_MastCalibration.color = colorStart;
-            text_Quit.color = colorStart;
+        if (MastMovement.tilt < 5) {
+            print("MINDRE 5");
+            image_Play.color = colorHighlight;
+            image_HighScores.color = colorNotPressed;
+          
         }
         if (MastMovement.tilt > 10) {
-            text_Play.color = colorStart;
-            text_HighScores.color = colorPressed;
-            text_MastCalibration.color = colorStart;
-            text_Quit.color = colorStart;
+            print("MER 10");
+            image_Play.color = colorNotPressed;
+            image_HighScores.color = colorHighlight;
+           
         }
-        if (MastMovement.tilt > 20) {
-            text_Play.color = colorStart;
-            text_HighScores.color = colorStart;
-            text_MastCalibration.color = colorPressed;
-            text_Quit.color = colorStart;
-        }
-        if (MastMovement.tilt > 30) {
-            text_Play.color = colorStart;
-            text_HighScores.color = colorStart;
-            text_MastCalibration.color = colorStart;
-            text_Quit.color = colorPressed;
-        }
+        
     }
 }

@@ -588,9 +588,9 @@ MonoBehaviour:
   insideObstacle: 0
   phasePortal: {fileID: 1159833215655848, guid: 00887bfd3c3a5764aa8a5add1f304ada,
     type: 2}
-  timer_cooldown: 5
+  timer_cooldown: 3
   timer_duration: 0
-  cooldown_phaseShift: 1
+  cooldown_phaseShift: 3
   duration_phaseShift: 1.5
 --- !u!212 &313734377
 SpriteRenderer:
@@ -2734,7 +2734,7 @@ Prefab:
     - target: {fileID: 114986534672312714, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
       propertyPath: turnSpeed
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 114025647402804634, guid: 978e78cdaa551d548bf706e6cb1e679f,
         type: 2}
