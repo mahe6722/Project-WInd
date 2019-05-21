@@ -11307,6 +11307,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4047298726081212, guid: 4359587f13d5482468a3efcd29a6eb4b,
     type: 2}
   m_PrefabInternal: {fileID: 1400040347}
+--- !u!114 &1938358873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1938358869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35f0461a0241a9548bd0b63d5bc43249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraSpeed: 0.1
+  zoomSize: 2.5
+  zoomSpeed: 1
 --- !u!1001 &1939295518
 Prefab:
   m_ObjectHideFlags: 0
