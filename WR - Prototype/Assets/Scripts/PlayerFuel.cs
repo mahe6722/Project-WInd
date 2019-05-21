@@ -52,7 +52,7 @@ public class PlayerFuel : MonoBehaviour {
             playerFuel = 1;
         }
 
-        if (playerFuel < 0.4) {
+        if (playerFuel < 0.3) {
             //TURN WARNING TRIANGLE ON.
             warningFuelUI.SetActive(true);
 
