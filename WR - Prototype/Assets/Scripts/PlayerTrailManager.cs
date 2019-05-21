@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class PlayerTrailManager : MonoBehaviour {
 
+    public GameObject smokeEngineParticle;
+    public GameObject engineParticle;
     ParticleSystem engineTrail;
+    ParticleSystem smokeTrail;
     PlayerFuel playerFuelScript;
 
     ParticleSystem.ColorOverLifetimeModule colorModule;
@@ -15,7 +18,8 @@ public class PlayerTrailManager : MonoBehaviour {
 	
 	void Start () {
 
-       engineTrail = GetComponent<ParticleSystem>();
+       engineTrail = engineParticle.GetComponent<ParticleSystem>();
+        smokeTrail = smokeEngineParticle.GetComponent<ParticleSystem>();
        playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
        colorModule = engineTrail.colorOverLifetime;
        startColor_Engine = engineTrail.colorOverLifetime.color;
@@ -25,16 +29,17 @@ public class PlayerTrailManager : MonoBehaviour {
 
         timer_EngineStutter += Time.deltaTime;
 
-        if (playerFuelScript.playerFuel < 0.35) {
-            colorModule.color = Color.black;
+        if (playerFuelScript.playerFuel < 0.3) {
+            smokeEngineParticle.SetActive(true);
+            engineParticle.SetActive(false);
 
-            if(timer_EngineStutter > duration_EngineStutter && engineTrail.isPlaying) {
-            engineTrail.Stop();
+            if(timer_EngineStutter > duration_EngineStutter && smokeTrail.isPlaying) {
+            smokeTrail.Stop();
              timer_EngineStutter = 0;
             }
 
-            if (!engineTrail.isPlaying) {
-                engineTrail.Play();
+            if (!smokeTrail.isPlaying) {
+                smokeTrail.Play();
             }
         }
         else if(Time.timeScale < 1) {
@@ -43,6 +48,8 @@ public class PlayerTrailManager : MonoBehaviour {
 
         else if(playerFuelScript.playerFuel >= 0.35) {
             colorModule.color = startColor_Engine;
+            smokeEngineParticle.SetActive(false);
+            engineParticle.SetActive(true);
             if (!engineTrail.isPlaying) {
                 engineTrail.Play();
             }
