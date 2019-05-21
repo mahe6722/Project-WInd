@@ -56,11 +56,11 @@ public class CampSpawner : MonoBehaviour
 
         if (randomNumber == 0) //Left
         {
-            transform.position = new Vector2(-0.48f, screenBounds.y * 2);
+            transform.position = new Vector2(-0.48f, screenBounds.y * 3);
         }
         if (randomNumber == 1) //Right
         {
-            transform.position = new Vector2(0.48f, screenBounds.y * 2);
+            transform.position = new Vector2(0.48f, screenBounds.y * 3);
         }
         if (randomNumber > 1 && randomNumber < 6) //Med
         {
