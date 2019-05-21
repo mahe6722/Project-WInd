@@ -272,6 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4573632723425532}
+  - component: {fileID: 114622866398197018}
   m_Layer: 0
   m_Name: CogPattern4
   m_TagString: Untagged
@@ -1270,6 +1271,17 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+--- !u!114 &114622866398197018
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1946556099758634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e69d7981e8eaffa4e8685bc12fe2898c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114699882189589268
 MonoBehaviour:
   m_ObjectHideFlags: 1

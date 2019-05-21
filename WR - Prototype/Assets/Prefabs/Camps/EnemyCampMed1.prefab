@@ -48,7 +48,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1109927604012474
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,7 +432,7 @@ Transform:
   m_GameObject: {fileID: 1583028067763974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 10.5, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0}
   m_Children:
   - {fileID: 4120691594824292}
   - {fileID: 4507276821757580}
@@ -550,7 +550,7 @@ Transform:
   m_GameObject: {fileID: 1242202909433240}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 14.5, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0}
   m_Children:
   - {fileID: 4930880214707418}
   - {fileID: 4441039105144332}
@@ -604,7 +604,7 @@ Transform:
   m_GameObject: {fileID: 1523327469586934}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 12.5, z: 0}
-  m_LocalScale: {x: 0.07, y: 0.07, z: 0}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0}
   m_Children:
   - {fileID: 4840097582789844}
   - {fileID: 4780271291937302}
@@ -977,7 +977,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 20}
+  m_Size: {x: 12, y: 18}
   m_EdgeRadius: 0
 --- !u!61 &61297744360869494
 BoxCollider2D:
