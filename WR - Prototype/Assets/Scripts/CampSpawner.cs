@@ -18,7 +18,7 @@ public class CampSpawner : MonoBehaviour
     private IEnumerator coroutine;
 
     int randomNumber;
-    int counter;
+    int counter = 0;
 
     int easyMode = 2;
     int mediumMode = 6;
@@ -40,11 +40,11 @@ public class CampSpawner : MonoBehaviour
 
     void Update()
     {
-        if (counter > 5)
+        if (counter > 1)
         {
             spawnLimit = mediumMode;
         }
-        if (counter > 10)
+        if (counter > 2)
         {
             spawnLimit = hardMode;
         }
@@ -62,11 +62,31 @@ public class CampSpawner : MonoBehaviour
         {
             transform.position = new Vector2(0.48f, screenBounds.y * 3);
         }
-        if (randomNumber > 1 && randomNumber < 6) //Med
+        if (randomNumber == 2) //Right
         {
-            transform.position = new Vector2(0, screenBounds.y * 3);
+            transform.position = new Vector2(0, screenBounds.y * 4);
         }
-        if (randomNumber > 5 && randomNumber < 8) //Hard
+        if (randomNumber == 3) //Right
+        {
+            transform.position = new Vector2(0, screenBounds.y * 4);
+        }
+        if (randomNumber == 4) //Right
+        {
+            transform.position = new Vector2(0, screenBounds.y * 4);
+        }
+        if (randomNumber == 5) //Right
+        {
+            transform.position = new Vector2(0, screenBounds.y * 4);
+        }
+        if (randomNumber == 6) //Right
+        {
+            transform.position = new Vector2(0.86f, screenBounds.y * 4);
+        }
+        if (randomNumber == 7) //Right
+        {
+            transform.position = new Vector2(0, screenBounds.y * 4);
+        }
+        if (randomNumber > 1 && randomNumber < 6) //Med
         {
             transform.position = new Vector2(0, screenBounds.y * 3);
         }

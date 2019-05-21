@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50567872213787216}
   m_Layer: 0
   m_Name: Fence5
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 50480744703009220}
   m_Layer: 0
   m_Name: Fence3
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 50228253341154416}
   m_Layer: 0
   m_Name: Fence4
-  m_TagString: Untagged
+  m_TagString: Fence
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
