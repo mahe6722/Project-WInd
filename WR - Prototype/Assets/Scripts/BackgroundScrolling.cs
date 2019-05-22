@@ -27,7 +27,8 @@ public class BackgroundScrolling : MonoBehaviour
         gameObject.transform.Translate(Vector2.down * configScript.speed * Time.smoothDeltaTime);
         if (gameObject.transform.position.y <= -19)
         {
-            gameObject.transform.Translate(new Vector3(0, gameObject.transform.position.y + 57, 0), Space.World);
+            //Mathf.Round(gameObject.transform.position.y + 57);
+            gameObject.transform.Translate(new Vector3(0, Mathf.Round(gameObject.transform.position.y + 57), 0), Space.World);
             //startPos = startPos = transform.position.y;
         }
     }
