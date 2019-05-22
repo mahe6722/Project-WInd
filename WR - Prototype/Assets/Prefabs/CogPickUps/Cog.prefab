@@ -85,7 +85,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1293994041860014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.8585634, y: 0.59706664, z: 0}
+  m_LocalPosition: {x: 3.2247083, y: -0.22202908, z: 0}
   m_LocalScale: {x: 0.035, y: 0.035, z: 0}
   m_Children:
   - {fileID: 4160230700438354}
@@ -272,6 +272,7 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
 --- !u!198 &198062078527839112
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -454,7 +454,7 @@ Transform:
   m_GameObject: {fileID: 1842088343077910}
   m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1}
+  m_LocalScale: {x: -1.5, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 4681837126839466}
   m_RootOrder: 5
@@ -1212,6 +1212,9 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114140020550247380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1242,6 +1245,9 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114480506914405208
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1272,6 +1278,9 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114588140211485424
 MonoBehaviour:
   m_ObjectHideFlags: 1

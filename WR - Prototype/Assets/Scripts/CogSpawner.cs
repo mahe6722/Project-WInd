@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CogSpawner : MonoBehaviour
+
 {
+    GameState gameStateScript;
+
     public GameObject[] cogs;
 
     GameObject player;
@@ -18,6 +21,7 @@ public class CogSpawner : MonoBehaviour
 
     void Start()
     {
+        gameStateScript = GameObject.Find("GameState").GetComponent<GameState>();
         player = GameObject.Find("Player");
 
         screenBounds = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height, Camera.main.transform.position.z));
@@ -57,7 +61,7 @@ public class CogSpawner : MonoBehaviour
 
     IEnumerator cogWave()
     {
-        while (player.activeSelf)
+        while (player.activeSelf && !gameStateScript.gameOver)
         {
             yield return new WaitForSeconds(respawnTime);
             spawnCogs(randomNumber);
