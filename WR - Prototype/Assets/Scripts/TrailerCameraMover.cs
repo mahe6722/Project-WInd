@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TrailerCameraMover : MonoBehaviour {
 
@@ -39,18 +40,43 @@ public class TrailerCameraMover : MonoBehaviour {
         if (Input.GetKey(KeyCode.N)) {
 
             if (zoomSize > 1) {
-                zoomSize -= 0.5f * zoomSpeed * Time.deltaTime;
+
+                if (Input.GetKey(KeyCode.F)) {
+                    print("Zooming In");
+                    zoomSize -= 0.5f * zoomSpeed * 0.1f;
+                } 
+                else {
+                    zoomSize -= 0.5f * zoomSpeed * Time.deltaTime;
+                }
             }
+
         }
         //Camera Zoom Out
         if (Input.GetKey(KeyCode.M)) {
 
             if (zoomSize < 3) {
-                zoomSize += 0.5f * zoomSpeed * Time.deltaTime;
+                
+                if(Input.GetKey(KeyCode.F)) {
+                    print("Zooming Out");
+                    zoomSize += 0.5f * zoomSpeed * 0.1f;
+                } 
+                else {
+                    zoomSize += 0.5f * zoomSpeed * Time.deltaTime;
+                }
             }
         }
         mainCamera.orthographicSize = zoomSize;
-            
+
+        //RESTART & PAUSE
+        if (Input.GetKey(KeyCode.R)) {
+            SceneManager.LoadScene("TrailerScene");
+        }
+        if (Input.GetKey(KeyCode.F)) {
+            Time.timeScale = 0f;
+        }
+        if (Input.GetKeyUp(KeyCode.F)) {
+            Time.timeScale = 1f;
+        }
     }
 }
 

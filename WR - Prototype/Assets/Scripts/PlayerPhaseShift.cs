@@ -20,7 +20,9 @@ public class PlayerPhaseShift : MonoBehaviour {
     CircleCollider2D[] playerCircleColliders;
     public SpriteRenderer playerSprite;
     public SpriteRenderer dimensionSprite;
+
     public GameObject playerTrailEffect;
+    public GameObject playerSmokeTrailEffect;
 
     public BoxCollider2D SafetyCollider_PhaseShift;
     public bool insideObstacle;
@@ -46,8 +48,6 @@ public class PlayerPhaseShift : MonoBehaviour {
         playerSprite = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         dimensionSprite = GetComponent<SpriteRenderer>();
 
-        playerTrailEffect = GameObject.Find("Trail Effect");
-
         SafetyCollider_PhaseShift = GetComponent<BoxCollider2D>();
 
 
@@ -58,8 +58,20 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         timer_cooldown += Time.deltaTime;
 
+        if (dimensionSprite.enabled == true) {
+            playerTrailEffect.SetActive(false);
+            playerSmokeTrailEffect.SetActive(false);
+        }
+        else if (playerFuelScript.playerFuel > 0.3) {
+            playerTrailEffect.SetActive(true);
+        }
+        else if(playerFuelScript.playerFuel <= 0.3) {
+            playerSmokeTrailEffect.SetActive(true);
+        }
+
+
         //Ability Ready
-        if(timer_cooldown > cooldown_phaseShift) {
+        if (timer_cooldown > cooldown_phaseShift) {
             phaseShift_cooldown = false;
             phaseShift_ready = true;
         }
@@ -90,11 +102,11 @@ public class PlayerPhaseShift : MonoBehaviour {
                 circleCollider.enabled = false;
             }
 
-            playerSprite.enabled = false;
-            playerTrailEffect.SetActive(false);
+            
+            playerSprite.enabled = false;          
             dimensionSprite.enabled = true;
-
-            if(portalEntrance < 1) {
+           
+            if (portalEntrance < 1) {
             Instantiate(phasePortal, transform.position, transform.localRotation);
             portalEntrance++;
             portalExit = 0;
@@ -115,7 +127,7 @@ public class PlayerPhaseShift : MonoBehaviour {
             }
 
             playerSprite.enabled = true;
-            playerTrailEffect.SetActive(true);
+            
             dimensionSprite.enabled = false;
 
             if (portalExit < 1) {
