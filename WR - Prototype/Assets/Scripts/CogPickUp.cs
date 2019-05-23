@@ -30,8 +30,14 @@ public class CogPickUp : MonoBehaviour
         cogCollider = GetComponent<CircleCollider2D>();
 
         scoreFeedback = GameObject.Find("+Score Feedback");
+
+        if (!gameStateScript.gameOver) {
         scoreFeedbackSprite = GameObject.Find("+Score Feedback").GetComponent<SpriteRenderer>();
+        }
+
+        if (!gameStateScript.gameOver) {
         scoreFeedbackColor = scoreFeedbackSprite.color;
+        }
 
         if (!gameStateScript.gameOver) {
         scoreText = GameObject.Find("Score").GetComponent<Text>();
