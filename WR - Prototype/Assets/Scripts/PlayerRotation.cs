@@ -16,10 +16,10 @@ public class PlayerRotation : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        faceMouse();
+        faceMouseX();
     }
 
-    void faceMouse()
+    void faceMouseX()
     {
 
         Vector2 direction = new Vector2(
@@ -27,8 +27,8 @@ public class PlayerRotation : MonoBehaviour
             mousePosLocator.transform.position.y - gameObject.transform.position.y
             );
 
-        gameObject.transform.rotation = new Quaternion(0, 0, Mathf.Clamp(transform.rotation.z, -30, 30), 0); //doesnt work
-
+        //gameObject.transform.rotation = new Quaternion(0, 0, Mathf.Clamp(transform.rotation.z, -30, 30), 0); //doesnt work
+        Mathf.Clamp(transform.rotation.eulerAngles.z, -30, 30);
         gameObject.transform.up = direction;
     }
 }

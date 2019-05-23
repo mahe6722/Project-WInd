@@ -13,13 +13,13 @@ public class MousePosXLocator : MonoBehaviour
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);      
 
-        direction = (mousePos - gameObject.transform.position).normalized;
+        direction = (-mousePos - gameObject.transform.position).normalized; // A "-" before mousePos inverts the controls reliably
 
-        gameObject.transform.position = new Vector2(Mathf.Clamp(transform.position.x, -5, 5), transform.position.y);
+        gameObject.transform.position = new Vector2(Mathf.Clamp(transform.position.x, -6, 6), transform.position.y);
 
-        if (gameObject.transform.position.x >= -5 && gameObject.transform.position.x <= 5)
+        if (gameObject.transform.position.x >= -6 && gameObject.transform.position.x <= 6)
         {
-            gameObject.transform.Translate(new Vector2(direction.x * Time.smoothDeltaTime * 100, 0));
+            gameObject.transform.Translate(new Vector2(direction.x * Time.smoothDeltaTime * 50, 0));
         }
     }
 }
