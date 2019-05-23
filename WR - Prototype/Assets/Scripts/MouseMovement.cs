@@ -30,7 +30,7 @@ public class MouseMovement : MonoBehaviour {
         DetermineTilt();
 
         //If Mast is not straight, Turn!
-        PlayerTurning();
+        //PlayerTurning();
     }
 
     void DetermineTilt()

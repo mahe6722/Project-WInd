@@ -12,7 +12,7 @@ public class MousePosXLocator : MonoBehaviour
 	void Update ()
     {
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);      
-        //float mousePosX = mousePos.x;
+
         direction = (mousePos - gameObject.transform.position).normalized;
 
         gameObject.transform.position = new Vector2(Mathf.Clamp(transform.position.x, -5, 5), transform.position.y);
