@@ -35,11 +35,12 @@ public class GameState : MonoBehaviour {
 
         if (gameOver) {
             score_Text.SetActive(false);
-            restartMenu.SetActive(true);
+            
             text_restartMenu.SetActive(false);
             background_restartMenu.color = Color.Lerp(background_restartMenu.color, new Color(0, 0, 0, 1), flashSpeed * Time.deltaTime);
 
-            if (background_restartMenu.color.a >= 0.95f) {
+            if (background_restartMenu.color.a >= 0.85f) {
+                restartMenu.SetActive(true);
                 text_restartMenu.SetActive(true);
                 highscoreTable.SetActive(true);
             }

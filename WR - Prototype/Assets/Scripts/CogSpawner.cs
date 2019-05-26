@@ -57,6 +57,7 @@ public class CogSpawner : MonoBehaviour
             transform.position = new Vector2(Random.Range(-screenBounds.x + 3, screenBounds.x - 5), screenBounds.y * 3);
             Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
         }
+        
     }
 
     IEnumerator cogWave()

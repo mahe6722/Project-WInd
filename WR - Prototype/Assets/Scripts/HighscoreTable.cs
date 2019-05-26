@@ -21,7 +21,9 @@ public class HighscoreTable : MonoBehaviour
 
         entryTemplate.gameObject.SetActive(false);
 
+        if(configScript != null) {
         playerScore = configScript.score;
+        }
 
 
         string jsonString = PlayerPrefs.GetString("HighscoreTable");
@@ -95,8 +97,8 @@ public class HighscoreTable : MonoBehaviour
 
         if (score == playerScore && !oneTime)
         {
-            entryTransform.Find("PositionText").GetComponent<Text>().color = Color.green;
-            entryTransform.Find("ScoreText").GetComponent<Text>().color = Color.green;
+            entryTransform.Find("PositionText").GetComponent<Text>().color = Color.cyan;
+            entryTransform.Find("ScoreText").GetComponent<Text>().color = Color.cyan;
 
             oneTime = true;
         }
@@ -110,7 +112,7 @@ public class HighscoreTable : MonoBehaviour
                 entryTransform.Find("Medal").GetComponent<Image>().color = Color.yellow;
                 break;
             case 2:
-                entryTransform.Find("Medal").GetComponent<Image>().color = Color.gray;
+                entryTransform.Find("Medal").GetComponent<Image>().color = Color.grey;
                 break;
             case 3:
                 entryTransform.Find("Medal").GetComponent<Image>().color = Color.red;

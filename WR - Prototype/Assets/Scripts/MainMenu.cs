@@ -6,8 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour {
 
+    public GameObject mouseXposTracker;
+    public GameObject highScoreTable;
+
     public Image image_Play;
     public Image image_HighScores;
+    public Image image_Back;
     
    // public GameObject textMainMenu;
 
@@ -44,6 +48,16 @@ public class MainMenu : MonoBehaviour {
 
             if (image_HighScores.color == colorHighlight) {
                 print("SHOWING HIGHSCORES");
+                highScoreTable.SetActive(true);
+                image_Back.enabled = true;
+            }
+
+            if (image_Back.color == colorHighlight) {
+                highScoreTable.SetActive(false);
+                image_Back.enabled = false;
+
+                image_Play.enabled = true;
+                image_HighScores.enabled = true;
             }
 
         }
@@ -51,13 +65,13 @@ public class MainMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (MastMovement.tilt < 5) {
+        if (mouseXposTracker.transform.position.x < 0) {
             print("MINDRE 5");
             image_Play.color = colorHighlight;
             image_HighScores.color = colorNotPressed;
           
         }
-        if (MastMovement.tilt > 10) {
+        if (mouseXposTracker.transform.position.x > 0) {
             print("MER 10");
             image_Play.color = colorNotPressed;
             image_HighScores.color = colorHighlight;

@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
 
 	void Update ()
     {
-        gameObject.transform.position = new Vector2(Mathf.Clamp(transform.position.x, -4, 4), transform.position.y);
+        gameObject.transform.position = new Vector2(Mathf.Clamp(transform.position.x, -2.4f, 2.4f), transform.position.y);
 
         if (player.transform.rotation.z < 0)
         {
