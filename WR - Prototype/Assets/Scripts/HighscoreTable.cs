@@ -107,15 +107,17 @@ public class HighscoreTable : MonoBehaviour
         {
             default:
                 entryTransform.Find("Medal").gameObject.SetActive(false);
+                
+
                 break;
             case 1:
-                entryTransform.Find("Medal").GetComponent<Image>().color = Color.yellow;
+                entryTransform.Find("Medal").GetComponent<Image>().sprite = GameObject.Find("Medal").GetComponent<Image>().sprite;
                 break;
             case 2:
-                entryTransform.Find("Medal").GetComponent<Image>().color = Color.grey;
+                entryTransform.Find("Medal").GetComponent<Image>().sprite = GameObject.Find("Medal2").GetComponent<Image>().sprite;
                 break;
             case 3:
-                entryTransform.Find("Medal").GetComponent<Image>().color = Color.red;
+                entryTransform.Find("Medal").GetComponent<Image>().sprite = GameObject.Find("Medal3").GetComponent<Image>().sprite;
                 break;
         }
         transformList.Add(entryTransform);

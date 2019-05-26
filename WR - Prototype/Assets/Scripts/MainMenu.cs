@@ -8,6 +8,7 @@ public class MainMenu : MonoBehaviour {
 
     public GameObject mouseXposTracker;
     public GameObject highScoreTable;
+    public bool showHighScore;
 
     public Image image_Play;
     public Image image_HighScores;
@@ -40,19 +41,22 @@ public class MainMenu : MonoBehaviour {
 
     private void MenuButtonInteractions()
     {
-        if (Input.anyKey) {
+        if (Input.anyKeyDown) {
 
             if (image_Play.color == colorHighlight) {
                 SceneManager.LoadScene(1);
             }
 
-            if (image_HighScores.color == colorHighlight) {
+            if (image_HighScores.color == colorHighlight && image_HighScores.enabled == true) {
                 print("SHOWING HIGHSCORES");
                 highScoreTable.SetActive(true);
                 image_Back.enabled = true;
+
+                image_Play.enabled = false;
+                image_HighScores.enabled = false;
             }
 
-            if (image_Back.color == colorHighlight) {
+            else if (image_Back.color == colorHighlight && image_Back.enabled == true) {
                 highScoreTable.SetActive(false);
                 image_Back.enabled = false;
 
@@ -65,14 +69,14 @@ public class MainMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (mouseXposTracker.transform.position.x < 0) {
-            print("MINDRE 5");
+        if (mouseXposTracker.transform.position.x <= 0) {
+            print("Up");
             image_Play.color = colorHighlight;
             image_HighScores.color = colorNotPressed;
           
         }
-        if (mouseXposTracker.transform.position.x > 0) {
-            print("MER 10");
+        if (mouseXposTracker.transform.position.x > 1) {
+            print("Down");
             image_Play.color = colorNotPressed;
             image_HighScores.color = colorHighlight;
            

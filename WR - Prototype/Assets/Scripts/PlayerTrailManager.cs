@@ -10,6 +10,8 @@ public class PlayerTrailManager : MonoBehaviour {
     ParticleSystem smokeTrail;
     PlayerFuel playerFuelScript;
 
+    PlayerPhaseShift playerPhaseShiftScript;
+
     ParticleSystem.ColorOverLifetimeModule colorModule;
     ParticleSystem.MinMaxGradient startColor_Engine;
 
@@ -18,11 +20,13 @@ public class PlayerTrailManager : MonoBehaviour {
 	
 	void Start () {
 
-       engineTrail = engineParticle.GetComponent<ParticleSystem>();
-        smokeTrail = smokeEngineParticle.GetComponent<ParticleSystem>();
+       engineTrail = GameObject.Find("newEngineTrail").GetComponent<ParticleSystem>();
+       smokeTrail = smokeEngineParticle.GetComponent<ParticleSystem>();
        playerFuelScript = GameObject.Find("Player").GetComponent<PlayerFuel>();
        colorModule = engineTrail.colorOverLifetime;
        startColor_Engine = engineTrail.colorOverLifetime.color;
+
+        playerPhaseShiftScript = GameObject.Find("Phase_Gadget").GetComponent<PlayerPhaseShift>();
 	}
 	
 	void Update () {
@@ -46,7 +50,7 @@ public class PlayerTrailManager : MonoBehaviour {
             colorModule.color = Color.cyan;
         }
 
-        else if(playerFuelScript.playerFuel >= 0.35) {
+        else if(playerFuelScript.playerFuel >= 0.35 && playerPhaseShiftScript.portalExit > 0f) {
             colorModule.color = startColor_Engine;
             smokeEngineParticle.SetActive(false);
             engineParticle.SetActive(true);

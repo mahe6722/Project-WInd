@@ -13,6 +13,8 @@ public class PlayerPhaseShift : MonoBehaviour {
     bool phaseShift_activated;
     bool phaseShift_cooldown;
 
+    public Text cooldown_timer_text;
+
     PlayerFuel playerFuelScript;
     float fuelConsumption;
 
@@ -22,6 +24,7 @@ public class PlayerPhaseShift : MonoBehaviour {
     public SpriteRenderer dimensionSprite;
 
     public GameObject playerTrailEffect;
+    public ParticleSystem engineParticles;
     public GameObject playerSmokeTrailEffect;
 
     public BoxCollider2D SafetyCollider_PhaseShift;
@@ -30,7 +33,7 @@ public class PlayerPhaseShift : MonoBehaviour {
 
     public GameObject phasePortal;
     int portalEntrance = 0;
-    int portalExit = 0;
+    public int portalExit = 0;
 
     public float timer_cooldown;
     public float timer_duration;
@@ -50,6 +53,10 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         SafetyCollider_PhaseShift = GetComponent<BoxCollider2D>();
 
+        engineParticles = GameObject.Find("newEngineTrail").GetComponent<ParticleSystem>();
+
+        cooldown_timer_text = GameObject.Find("Cooldown_Timer").GetComponent<Text>();
+
 
     }
 
@@ -59,7 +66,9 @@ public class PlayerPhaseShift : MonoBehaviour {
         timer_cooldown += Time.deltaTime;
 
         if (dimensionSprite.enabled == true) {
+            print("phasing");
             playerTrailEffect.SetActive(false);
+            engineParticles.Play(false);
             playerSmokeTrailEffect.SetActive(false);
         }
         else if (playerFuelScript.playerFuel > 0.3) {
@@ -80,12 +89,14 @@ public class PlayerPhaseShift : MonoBehaviour {
         }
 
         if (portalEntrance == 1) {
+            playerTrailEffect.SetActive(false);
             if(insideObstacle == false) {
             timer_duration += Time.deltaTime;
             }
             playerFuelScript.fuelConsumption = 0f;
         }
         if (portalExit == 1) {
+            playerTrailEffect.SetActive(true);
             playerFuelScript.fuelConsumption = fuelConsumption;
         }
 
