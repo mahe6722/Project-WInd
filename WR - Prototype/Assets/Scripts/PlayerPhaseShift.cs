@@ -83,6 +83,7 @@ public class PlayerPhaseShift : MonoBehaviour {
         if (timer_cooldown > cooldown_phaseShift) {
             phaseShift_cooldown = false;
             phaseShift_ready = true;
+            cooldown_timer_text.enabled = false;
         }
         else {
             phaseShift_ready = false;
@@ -126,6 +127,7 @@ public class PlayerPhaseShift : MonoBehaviour {
         }
         if (timer_duration > duration_phaseShift && insideObstacle == false) {
             //Ability on Cooldown
+            cooldown_timer_text.enabled = true;
             phaseShift_activated = false;
             phaseShift_cooldown = true;
             print("Returning From Dimension");
@@ -159,6 +161,16 @@ public class PlayerPhaseShift : MonoBehaviour {
         }
         if (phaseShift_cooldown) {
             image_PhaseShift_Ready.enabled = false;
+
+            //PHASE TEXT COUNTDOWN           
+            cooldown_timer_text.enabled = true;
+           
+            if (cooldown_phaseShift - timer_cooldown >= 0) {
+                cooldown_timer_text.text = Mathf.Round(cooldown_phaseShift - timer_cooldown + 1).ToString();
+                
+            } else {
+                cooldown_timer_text.enabled = false;
+            }
             image_PhaseShift_Activated.fillAmount = timer_cooldown/cooldown_phaseShift;
         }
 	}

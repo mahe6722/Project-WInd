@@ -757,8 +757,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 80.499985}
-  m_SizeDelta: {x: 30, y: 50}
+  m_AnchoredPosition: {x: 0, y: 71.88}
+  m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &95446327
 MonoBehaviour:
@@ -772,7 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8962264, g: 0.8243592, b: 0.8243592, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -786,13 +786,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 60
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 3
+  m_Text: 
 --- !u!222 &95446328
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10460,7 +10460,7 @@ MonoBehaviour:
   image_PhaseShift_Ready: {fileID: 64023805}
   image_PhaseShift_Activated: {fileID: 2126015740}
   image_PhaseShift_Cooldown: {fileID: 1443434528}
-  cooldown_timer_text: {fileID: 0}
+  cooldown_timer_text: {fileID: 95446327}
   playerSprite: {fileID: 0}
   dimensionSprite: {fileID: 0}
   playerTrailEffect: {fileID: 1041247643}
