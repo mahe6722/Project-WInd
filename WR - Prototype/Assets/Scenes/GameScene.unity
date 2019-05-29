@@ -10561,9 +10561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bc8afe880e55a49aeb0c5ba5758a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image_PhaseShift_Ready: {fileID: 64023805}
-  image_PhaseShift_Activated: {fileID: 2126015740}
-  image_PhaseShift_Cooldown: {fileID: 1443434528}
+  image_PhaseShift_Ready: {fileID: 1217472292}
+  image_PhaseShift_Activated: {fileID: 609308309}
+  image_PhaseShift_Cooldown: {fileID: 1623172145}
   cooldown_timer_text: {fileID: 95446327}
   playerSprite: {fileID: 0}
   dimensionSprite: {fileID: 0}
@@ -11211,7 +11211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &421165170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12269,7 +12269,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5, y: 110.47}
+  m_AnchoredPosition: {x: 0.92, y: 110.47}
   m_SizeDelta: {x: 40, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &700248120
@@ -12284,7 +12284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8962264, g: 0.8243592, b: 0.8243592, a: 1}
+  m_Color: {r: 0.745283, g: 0.745283, b: 0.745283, a: 0.7490196}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -12293,7 +12293,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: d0a684ffa8ee58f4393649c10146a146, type: 3}
-    m_FontSize: 55
+    m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -12304,7 +12304,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 
+  m_Text: 4
 --- !u!222 &700248121
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13450,7 +13450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &910750389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -17163,12 +17163,12 @@ Prefab:
         type: 2}
       propertyPath: image_SlowMotionUI
       value: 
-      objectReference: {fileID: 1352292174}
+      objectReference: {fileID: 503424945}
     - target: {fileID: 114607969289696296, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: image_SlowMotionUIBorder
       value: 
-      objectReference: {fileID: 431067845}
+      objectReference: {fileID: 1753204305}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: fuelConsumption
@@ -17280,12 +17280,12 @@ Prefab:
         type: 2}
       propertyPath: image_Fuel_Filled
       value: 
-      objectReference: {fileID: 688101286}
+      objectReference: {fileID: 413533189}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: image_Fuel_Border
       value: 
-      objectReference: {fileID: 1516437522}
+      objectReference: {fileID: 243136063}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: playerFuel

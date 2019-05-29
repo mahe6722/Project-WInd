@@ -58,6 +58,9 @@ public class PlayerTrailManager : MonoBehaviour {
                 engineTrail.Play();
             }
         }
+        if(Time.timeScale >= 1) {
+            colorModule.color = startColor_Engine;
+        }
 
 	}
 }
