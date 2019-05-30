@@ -2060,6 +2060,9 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114175727353978808
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2134,6 +2137,9 @@ MonoBehaviour:
   particleEffect: {fileID: 0}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!198 &198044374251122146
 ParticleSystem:
   m_ObjectHideFlags: 1

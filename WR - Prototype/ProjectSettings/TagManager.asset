@@ -18,6 +18,7 @@ TagManager:
   - CampFuel
   - CampCog
   - PhaseArea
+  - CampBoulder
   layers:
   - Default
   - TransparentFX

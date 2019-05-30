@@ -21,7 +21,7 @@ public class ObstacleBehavior : MonoBehaviour
         //speed = Config.speed;
 
         gameObject.transform.Translate(Vector2.down * configScript.speed * Time.smoothDeltaTime);
-        if (transform.position.y < screenBounds.y * -3)
+        if (transform.position.y < screenBounds.y * -5)
         {
             Destroy(this.gameObject);
         }

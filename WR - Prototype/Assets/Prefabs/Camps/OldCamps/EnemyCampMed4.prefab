@@ -4131,6 +4131,9 @@ MonoBehaviour:
   particleEffect: {fileID: 1847882782378508}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114290650230546700
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4150,6 +4153,9 @@ MonoBehaviour:
   particleEffect: {fileID: 1869104513507514}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114398428795835628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4241,6 +4247,9 @@ MonoBehaviour:
   particleEffect: {fileID: 1518082178449786}
   pickupEffect: {fileID: 1750514484155284, guid: 6f5adb47051038a48817e98969e278ef,
     type: 2}
+  scoreFeedback: {fileID: 0}
+  scoreText: {fileID: 0}
+  scoreFeedbackColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!114 &114893118140389670
 MonoBehaviour:
   m_ObjectHideFlags: 1

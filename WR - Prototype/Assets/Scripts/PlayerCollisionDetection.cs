@@ -26,7 +26,7 @@ public class PlayerCollisionDetection : MonoBehaviour
                 print("Player hit a fence or a bunker");
                 player.SetActive(false);
             }
-            if (other.tag == "Obstacle")
+            if (other.tag == "Obstacle" || other.tag == "CampBoulder")
             {
                 Instantiate(ExplosionParticle, transform.position, transform.rotation);
                 print("Player hit an obstacle");

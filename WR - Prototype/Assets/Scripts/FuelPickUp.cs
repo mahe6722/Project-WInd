@@ -24,7 +24,7 @@ public class FuelPickUp : MonoBehaviour
             playerFuelScript = player.GetComponent<PlayerFuel>();
         }
         
-        CheckSizeFuelContainer();
+        //CheckSizeFuelContainer();
 
         fuelSound = GetComponent<AudioSource>();
         fuelSprite = GetComponent<SpriteRenderer>();
@@ -35,16 +35,16 @@ public class FuelPickUp : MonoBehaviour
     //{
     //}
 
-    private void CheckSizeFuelContainer()
-    {
-        //This is current size of fuel in camps, change if Fuel is made bigger. Use another "if" for the small size.
-        if (transform.localScale.x >= 0.07 && transform.localScale.y >= 0.07) {
-            containerSize = 0.25f;
-        }
-        if (transform.localScale.x == 0.04f && transform.localScale.y == 0.04f) {
-          containerSize = 0.10f;
-        }
-    }
+    //private void CheckSizeFuelContainer()
+    //{
+    //    //This is current size of fuel in camps, change if Fuel is made bigger. Use another "if" for the small size.
+    //    if (transform.localScale.x >= 0.07 && transform.localScale.y >= 0.07) {
+    //        containerSize = 0.25f;
+    //    }
+    //    if (transform.localScale.x == 0.04f && transform.localScale.y == 0.04f) {
+    //      containerSize = 0.10f;
+    //    }
+    //}
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -55,7 +55,7 @@ public class FuelPickUp : MonoBehaviour
             fuelSound.Play();
             Instantiate(pickupEffect, transform.position, transform.rotation);
 
-            playerFuelScript.playerFuel += containerSize;
+            playerFuelScript.playerFuel += 0.25f;
 
             print("Player picked up the fuel!");
 

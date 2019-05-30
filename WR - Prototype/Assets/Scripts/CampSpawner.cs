@@ -56,11 +56,11 @@ public class CampSpawner : MonoBehaviour
 
         if (randomNumber == 0) //Left
         {
-            transform.position = new Vector2(1f, screenBounds.y * 3);
+            transform.position = new Vector2(0, screenBounds.y * 3);
         }
         if (randomNumber == 1) //Right
         {
-            transform.position = new Vector2(-1.12f, screenBounds.y * 3);
+            transform.position = new Vector2(-0, screenBounds.y * 3);
         }
         if (randomNumber == 2) //Right
         {
@@ -80,15 +80,11 @@ public class CampSpawner : MonoBehaviour
         }
         if (randomNumber == 6) //Right
         {
-            transform.position = new Vector2(0.86f, screenBounds.y * 4);
+            transform.position = new Vector2(0, screenBounds.y * 4);
         }
         if (randomNumber == 7) //Right
         {
             transform.position = new Vector2(0, screenBounds.y * 4);
-        }
-        if (randomNumber > 1 && randomNumber < 6) //Med
-        {
-            transform.position = new Vector2(0, screenBounds.y * 3);
         }
         print("Spawning Camp!" + randomNumber);
         Instantiate(camps[randomNumber], transform.position, Quaternion.identity);
