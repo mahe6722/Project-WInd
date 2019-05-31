@@ -39,25 +39,25 @@ public class CogSpawner : MonoBehaviour
     {
         if (randomNumber == 0)
         {
-            transform.position = new Vector2(Random.Range(-screenBounds.x - 4, screenBounds.x - 7), screenBounds.y * 3);
+            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
             Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
         }
         if (randomNumber == 1)
         {
-            transform.position = new Vector2(Random.Range(-screenBounds.x + 3, screenBounds.x - 5), screenBounds.y * 3);
+            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
             Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
         }
         if (randomNumber == 2)
         {
-            transform.position = new Vector2(Random.Range(-screenBounds.x + 3, screenBounds.x - 5), screenBounds.y * 3);
+            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
             Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
         }
         if (randomNumber == 3)
         {
-            transform.position = new Vector2(Random.Range(-screenBounds.x + 3, screenBounds.x - 5), screenBounds.y * 3);
+            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
             Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
         }
-        
+
     }
 
     IEnumerator cogWave()
