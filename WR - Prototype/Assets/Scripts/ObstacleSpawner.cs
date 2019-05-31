@@ -35,7 +35,7 @@ public class ObstacleSpawner : MonoBehaviour
     private void spawnObstacles()
     {
         int randomNumber = Random.Range(0, obstacles.Length);
-        transform.position = new Vector2(Random.Range(-screenBounds.x + 0.2f, screenBounds.x - 0.2f), screenBounds.y * 2);
+        transform.position = new Vector2(Random.Range(-screenBounds.x + 1, screenBounds.x - 1), screenBounds.y * 2);
         Instantiate(obstacles[randomNumber], transform.position, Quaternion.identity);
     }
 
@@ -43,7 +43,7 @@ public class ObstacleSpawner : MonoBehaviour
     {
         while (player.activeSelf)
         {
-            respawnTime = Random.Range(0.5f, 2);
+            respawnTime = Random.Range(1, 3);
             yield return new WaitForSeconds(respawnTime);
             spawnObstacles();
         }

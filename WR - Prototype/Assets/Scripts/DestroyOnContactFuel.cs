@@ -13,7 +13,7 @@ public class DestroyOnContactFuel : MonoBehaviour
         }
         if (other.gameObject.tag == "SafetyCollider")
         {
-            print("sdgjkbsdhkgfskjg");
+            print("Hit Safety Collider");
             Destroy(other.gameObject);
         }
     }

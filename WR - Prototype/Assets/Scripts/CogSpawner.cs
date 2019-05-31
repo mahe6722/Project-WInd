@@ -37,27 +37,8 @@ public class CogSpawner : MonoBehaviour
 
     private void spawnCogs(int randomNumber)
     {
-        if (randomNumber == 0)
-        {
-            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
-            Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
-        }
-        if (randomNumber == 1)
-        {
-            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
-            Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
-        }
-        if (randomNumber == 2)
-        {
-            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
-            Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
-        }
-        if (randomNumber == 3)
-        {
-            transform.position = new Vector2(Random.Range(-screenBounds.x - 1, screenBounds.x + 1), screenBounds.y * 3);
-            Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
-        }
-
+        transform.position = new Vector2(Random.Range(-screenBounds.x + 1.5f, screenBounds.x - 1.5f), screenBounds.y * 3);
+        Instantiate(cogs[randomNumber], transform.position, Quaternion.identity);
     }
 
     IEnumerator cogWave()
