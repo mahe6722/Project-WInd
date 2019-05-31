@@ -1301,10 +1301,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bc8afe880e55a49aeb0c5ba5758a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image_PhaseShift_Ready: {fileID: 64023805}
-  image_PhaseShift_Activated: {fileID: 2126015740}
-  image_PhaseShift_Cooldown: {fileID: 1443434528}
-  cooldown_timer_text: {fileID: 95446327}
+  image_PhaseShift_Ready: {fileID: 1217472292}
+  image_PhaseShift_Activated: {fileID: 609308309}
+  image_PhaseShift_Cooldown: {fileID: 1623172145}
+  cooldown_timer_text: {fileID: 700248120}
   playerSprite: {fileID: 0}
   dimensionSprite: {fileID: 0}
   playerTrailEffect: {fileID: 1041247643}
@@ -1726,7 +1726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &421165170
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9390,7 +9390,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &910750389
 RectTransform:
   m_ObjectHideFlags: 0
@@ -18169,12 +18169,12 @@ Prefab:
         type: 2}
       propertyPath: image_SlowMotionUI
       value: 
-      objectReference: {fileID: 1352292174}
+      objectReference: {fileID: 503424945}
     - target: {fileID: 114607969289696296, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: image_SlowMotionUIBorder
       value: 
-      objectReference: {fileID: 431067845}
+      objectReference: {fileID: 1753204305}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: fuelConsumption
@@ -18286,12 +18286,12 @@ Prefab:
         type: 2}
       propertyPath: image_Fuel_Filled
       value: 
-      objectReference: {fileID: 688101286}
+      objectReference: {fileID: 413533189}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: image_Fuel_Border
       value: 
-      objectReference: {fileID: 1516437522}
+      objectReference: {fileID: 243136063}
     - target: {fileID: 114391356261994128, guid: fa63c51d068df274b97175d6125dda75,
         type: 2}
       propertyPath: playerFuel
