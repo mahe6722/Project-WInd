@@ -4860,7 +4860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDirection: 0
-  joystickSpeed: 0.35
+  joystickSpeed: 0.2
 --- !u!1 &1121686465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5471,8 +5471,8 @@ Transform:
   - {fileID: 1459460518}
   - {fileID: 859728688}
   - {fileID: 59118721}
-  - {fileID: 1861367814}
   - {fileID: 1376531017}
+  - {fileID: 1861367814}
   - {fileID: 618952539}
   - {fileID: 839128526}
   - {fileID: 92162157}
@@ -8527,7 +8527,7 @@ Transform:
   - {fileID: 215744835}
   - {fileID: 481782113}
   m_Father: {fileID: 1257549202}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1861367815
 MonoBehaviour:

@@ -25,5 +25,13 @@ public class JoystickTest : MonoBehaviour {
         }
 
         transform.Translate(moveDirection * joystickSpeed, 0, 0);
+
+        if (Input.GetAxis("XboxTriggerLeft") > 0) {
+            print("using left trigger");
+        }
+
+        if (Input.GetAxis("XboxTriggerRight") < 0) {
+            print("using right trigger");
+        }
     }
 }

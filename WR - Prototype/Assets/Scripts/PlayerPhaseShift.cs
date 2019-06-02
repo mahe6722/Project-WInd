@@ -101,7 +101,7 @@ public class PlayerPhaseShift : MonoBehaviour {
             playerFuelScript.fuelConsumption = fuelConsumption;
         }
 
-		if (Input.GetKey(KeyCode.W) && phaseShift_ready || Input.GetKey(KeyCode.Z) && phaseShift_ready) {
+		if (Input.GetAxis("XboxTriggerLeft") > 0 && phaseShift_ready || Input.GetKey(KeyCode.Z) && phaseShift_ready){
             //Ability Activated
             phaseShift_activated = true;
             print("Entering Other Dimension");
