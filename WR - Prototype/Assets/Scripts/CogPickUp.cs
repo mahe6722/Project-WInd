@@ -11,7 +11,8 @@ public class CogPickUp : MonoBehaviour
     public Config configScript;
     public AudioSource cogSound;
     public SpriteRenderer cogSprite;
-    public CircleCollider2D cogCollider;
+    public CircleCollider2D cogCollider1;
+    public CapsuleCollider2D cogCollider2;
 
     public GameObject particleEffect;
     public GameObject pickupEffect;
@@ -27,7 +28,8 @@ public class CogPickUp : MonoBehaviour
         configScript = GameObject.Find("DifficultySettings").GetComponent<Config>();
         cogSound = GetComponent<AudioSource>();
         cogSprite = GetComponent<SpriteRenderer>();
-        cogCollider = GetComponent<CircleCollider2D>();
+        cogCollider1 = GetComponent<CircleCollider2D>();
+        cogCollider2 = GetComponent<CapsuleCollider2D>();
 
         scoreFeedback = GameObject.Find("+Score Feedback");
 
@@ -49,7 +51,8 @@ public class CogPickUp : MonoBehaviour
         if (other.tag == "Player")
         {
             cogSprite.enabled = false;
-            cogCollider.enabled = false;
+            cogCollider1.enabled = false;
+            cogCollider2.enabled = false;
             cogSound.Play();
             Instantiate(pickupEffect, transform.position, transform.rotation);
 

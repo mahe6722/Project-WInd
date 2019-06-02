@@ -40,11 +40,11 @@ public class CampSpawner : MonoBehaviour
 
     void Update()
     {
-        if (counter > 1)
+        if (counter > 2)
         {
             spawnLimit = mediumMode;
         }
-        if (counter > 2)
+        if (counter > 4)
         {
             spawnLimit = hardMode;
         }
