@@ -22,6 +22,7 @@ public class PlayerPhaseShift : MonoBehaviour {
     CircleCollider2D[] playerCircleColliders;
     public SpriteRenderer playerSprite;
     public SpriteRenderer dimensionSprite;
+    public Color startColor_dimensionSprite;
 
     public GameObject playerTrailEffect;
     public ParticleSystem engineParticles;
@@ -50,6 +51,7 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         playerSprite = GameObject.Find("Player").GetComponent<SpriteRenderer>();
         dimensionSprite = GetComponent<SpriteRenderer>();
+        startColor_dimensionSprite = dimensionSprite.color;
 
         SafetyCollider_PhaseShift = GetComponent<BoxCollider2D>();
 
@@ -64,6 +66,7 @@ public class PlayerPhaseShift : MonoBehaviour {
     void Update () {
 
         timer_cooldown += Time.deltaTime;
+        
 
         if (dimensionSprite.enabled == true) {
             print("phasing");
@@ -104,6 +107,7 @@ public class PlayerPhaseShift : MonoBehaviour {
 		if (Input.GetAxis("XboxTriggerLeft") > 0 && phaseShift_ready || Input.GetKey(KeyCode.Z) && phaseShift_ready){
             //Ability Activated
             phaseShift_activated = true;
+           
             print("Entering Other Dimension");
             
 
@@ -140,7 +144,7 @@ public class PlayerPhaseShift : MonoBehaviour {
             }
 
             playerSprite.enabled = true;
-            
+        
             dimensionSprite.enabled = false;
 
             if (portalExit < 1) {

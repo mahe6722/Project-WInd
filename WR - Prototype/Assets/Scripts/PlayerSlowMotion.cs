@@ -76,10 +76,10 @@ public class PlayerSlowMotion : MonoBehaviour {
 
     private void UsingSlowMotion()
     {
-        if (Input.GetAxis("XboxTriggerRight") < 0 && slowmotionReady || Input.GetKey(KeyCode.P) && slowmotionReady){
+        if (Input.GetKey(KeyCode.P) && slowmotionReady){
 
             //Fixed Slow-Motion cost
-            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.P)) {
+            if (Input.GetKeyDown(KeyCode.P)) {
                 image_SlowMotionUI.fillAmount -= 0.2f;
             }
             //Depletes Slow Motion
@@ -118,8 +118,8 @@ public class PlayerSlowMotion : MonoBehaviour {
             image_SlowMotionUIBorder.color = colorChangeBorder;
 
         }
-        if (Input.GetAxis("XboxTriggerRight") >= 0 && image_SlowMotionUI.fillAmount < 1 || image_SlowMotionUI.fillAmount <= 0 || Input.GetKeyUp(KeyCode.P) && image_SlowMotionUI.fillAmount < 1) {
-            slowmotionReady = false;
+        if (image_SlowMotionUI.fillAmount <= 0 || Input.GetKeyUp(KeyCode.P) && image_SlowMotionUI.fillAmount < 1 ) {
+            slowmotionReady = false; 
 
             //Changing UI color when Slow Motion on cooldown.
             colorChangeFill.a = 0.2f;

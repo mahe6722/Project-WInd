@@ -1357,6 +1357,10 @@ MonoBehaviour:
   cooldown_timer_text: {fileID: 700248120}
   playerSprite: {fileID: 0}
   dimensionSprite: {fileID: 0}
+  startColor_dimensionSprite: {r: 0, g: 0, b: 0, a: 0}
+  flashTimer: 0
+  flashDuration: 0.1
+  flashSpeed: 57.5
   playerTrailEffect: {fileID: 1041247643}
   engineParticles: {fileID: 0}
   playerSmokeTrailEffect: {fileID: 909369467}
@@ -1368,7 +1372,7 @@ MonoBehaviour:
   timer_cooldown: 3
   timer_duration: 0
   cooldown_phaseShift: 3
-  duration_phaseShift: 1.5
+  duration_phaseShift: 0.75
 --- !u!212 &313734377
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1427,7 +1431,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 5.72}
+  m_Offset: {x: 0, y: 0.59}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -1438,7 +1442,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20, y: 30}
+  m_Size: {x: 10, y: 21}
   m_EdgeRadius: 0
 --- !u!50 &313734379
 Rigidbody2D:
