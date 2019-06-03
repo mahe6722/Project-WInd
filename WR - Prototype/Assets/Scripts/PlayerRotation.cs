@@ -7,6 +7,7 @@ public class PlayerRotation : MonoBehaviour
     GameObject mousePosLocator;
     MousePosXLocator mousePosLocatorScript;
     public float offset;
+    public float negativeOffset;
     // Use  this for initialization
     void Start ()
     {
@@ -22,9 +23,33 @@ public class PlayerRotation : MonoBehaviour
 
     void faceMouseX()
     {
+        if (mousePosLocator.transform.position.x - gameObject.transform.position.x == 0) {
+            print("Points straight up");
+            offset = 0f;
+        }
+
+        if(mousePosLocator.transform.position.x > 0) {
+            //offset = 3f;
+            offset = Mathf.Pow(mousePosLocator.transform.position.x, 2f);
+            if(offset > 3) {
+                offset = 3f;
+            }
+
+            print("Left Offset is:" + offset);
+        }
+        if (mousePosLocator.transform.position.x < 0) {
+            //offset = -3;
+            print("Right Offset is:" + offset);
+            negativeOffset = Mathf.Pow(mousePosLocator.transform.position.x, 2f);
+            offset = -negativeOffset;
+            if (offset < -3) {
+                offset = -3f;
+            }
+        }
+
 
         Vector2 direction = new Vector2(
-            mousePosLocator.transform.position.x - gameObject.transform.position.x,
+            mousePosLocator.transform.position.x - gameObject.transform.position.x + offset,
             mousePosLocator.transform.position.y - gameObject.transform.position.y
             );
 
