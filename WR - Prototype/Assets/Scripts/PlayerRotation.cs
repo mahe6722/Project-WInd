@@ -6,7 +6,8 @@ public class PlayerRotation : MonoBehaviour
 {
     GameObject mousePosLocator;
     MousePosXLocator mousePosLocatorScript;
-    // Use this for initialization
+    public float offset;
+    // Use  this for initialization
     void Start ()
     {
         mousePosLocator = GameObject.Find("MousePosLocator");
