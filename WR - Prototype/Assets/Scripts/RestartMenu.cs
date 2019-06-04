@@ -30,6 +30,8 @@ public class RestartMenu : MonoBehaviour {
     public MouseMovement mastMovement;
     public Config configScript;
 
+    public JoystickTest joystickScript;
+
     void Start()
     {
 
@@ -37,6 +39,8 @@ public class RestartMenu : MonoBehaviour {
         colorNotPressed = image_Restart.color;
 
         colorStart_yourScore = text_yourScore.color;
+
+        joystickScript = GameObject.Find("MousePosLocator").GetComponent<JoystickTest>();
     }
 
     // Update is called once per frame
@@ -86,13 +90,28 @@ public class RestartMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (mouseXposTracker.transform.position.x > 0) {
+      
+
+        if(Input.GetAxis("Vertical") > 0.0f) {
             image_MainMenu.color = colorHighlight;
             image_Restart.color = colorNotPressed;
         }
-        if (mouseXposTracker.transform.position.x < 0) {
+        if (mouseXposTracker.transform.position.x > 0 && joystickScript.joystickActive == false) {
+            image_MainMenu.color = colorHighlight;
+            image_Restart.color = colorNotPressed;
+        }
+
+        if (Input.GetAxis("Vertical") < 0.0f) {
             image_Restart.color = colorHighlight;
             image_MainMenu.color = colorNotPressed;
         }
+
+        if (mouseXposTracker.transform.position.x < 0 && joystickScript.joystickActive == false) {
+            image_Restart.color = colorHighlight;
+            image_MainMenu.color = colorNotPressed;
+        }
+
+        
+
     }
 }

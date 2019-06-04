@@ -30,7 +30,9 @@ public class PlayerPhaseShift : MonoBehaviour {
 
     public BoxCollider2D SafetyCollider_PhaseShift;
     public bool insideObstacle;
-    
+
+    public Image phase_Overlay;
+
 
     public GameObject phasePortal;
     int portalEntrance = 0;
@@ -59,14 +61,15 @@ public class PlayerPhaseShift : MonoBehaviour {
 
         cooldown_timer_text = GameObject.Find("Cooldown_Timer").GetComponent<Text>();
 
-
+        phase_Overlay = GameObject.Find("Phase_Overlay").GetComponent<Image>();
     }
 
     // Update is called once per frame
     void Update () {
 
         timer_cooldown += Time.deltaTime;
-        
+
+       
 
         if (dimensionSprite.enabled == true) {
             print("phasing");
@@ -104,9 +107,10 @@ public class PlayerPhaseShift : MonoBehaviour {
             playerFuelScript.fuelConsumption = fuelConsumption;
         }
 
-		if (Input.GetAxis("XboxTriggerLeft") > 0 && phaseShift_ready || Input.GetKey(KeyCode.Z) && phaseShift_ready){
+		if (Input.GetButton("Xbox_LBumper") && phaseShift_ready || Input.GetKey(KeyCode.Z) && phaseShift_ready){
             //Ability Activated
             phaseShift_activated = true;
+            
            
             print("Entering Other Dimension");
             
@@ -126,6 +130,8 @@ public class PlayerPhaseShift : MonoBehaviour {
             Instantiate(phasePortal, transform.position, transform.localRotation);
             portalEntrance++;
             portalExit = 0;
+            phase_Overlay.enabled = true;
+
             }
 
         }
@@ -151,6 +157,7 @@ public class PlayerPhaseShift : MonoBehaviour {
                 Instantiate(phasePortal, transform.position, transform.localRotation);
                 portalExit++;
                 portalEntrance = 0;
+                phase_Overlay.enabled = false;
             }
             timer_cooldown = 0f;
             timer_duration = 0f;

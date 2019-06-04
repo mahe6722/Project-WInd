@@ -22,7 +22,8 @@ public class PlayerSlowMotion : MonoBehaviour {
     public MouseMovement mouseMovementScript;
     float normalTurnSpeed;
     float slowMotionTurnSpeed;
-    
+
+    public Image SlowMotion_Overlay;
 
     bool slowmotionReady;
 
@@ -31,7 +32,7 @@ public class PlayerSlowMotion : MonoBehaviour {
        normalTurnSpeed = mouseMovementScript.turnSpeed;
        slowMotionTurnSpeed = normalTurnSpeed + 0.3f;
 
-        
+        SlowMotion_Overlay = GameObject.Find("SlowMotion_Overlay").GetComponent<Image>();
     }
 
     // Update is called once per frame
@@ -76,10 +77,11 @@ public class PlayerSlowMotion : MonoBehaviour {
 
     private void UsingSlowMotion()
     {
-        if (Input.GetKey(KeyCode.P) && slowmotionReady){
+        if (Input.GetKey(KeyCode.P) && slowmotionReady || Input.GetButton("Xbox_RBumper") && slowmotionReady){
 
+            SlowMotion_Overlay.enabled = true;
             //Fixed Slow-Motion cost
-            if (Input.GetKeyDown(KeyCode.P)) {
+            if (Input.GetKeyDown(KeyCode.P) || Input.GetButtonDown("Xbox_RBumper")) {
                 image_SlowMotionUI.fillAmount -= 0.2f;
             }
             //Depletes Slow Motion
@@ -100,6 +102,7 @@ public class PlayerSlowMotion : MonoBehaviour {
             Time.timeScale = 1;
             Time.fixedDeltaTime = 0.02f;
             mouseMovementScript.turnSpeed = normalTurnSpeed;
+            SlowMotion_Overlay.enabled = false;
         }
     }
 
@@ -118,7 +121,7 @@ public class PlayerSlowMotion : MonoBehaviour {
             image_SlowMotionUIBorder.color = colorChangeBorder;
 
         }
-        if (image_SlowMotionUI.fillAmount <= 0 || Input.GetKeyUp(KeyCode.P) && image_SlowMotionUI.fillAmount < 1 ) {
+        if (image_SlowMotionUI.fillAmount <= 0 || Input.GetKeyUp(KeyCode.P) && image_SlowMotionUI.fillAmount < 1 || Input.GetButtonUp("Xbox_RBumper") && image_SlowMotionUI.fillAmount < 1) {
             slowmotionReady = false; 
 
             //Changing UI color when Slow Motion on cooldown.

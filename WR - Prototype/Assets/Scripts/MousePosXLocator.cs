@@ -5,6 +5,8 @@ using UnityEngine;
 public class MousePosXLocator : MonoBehaviour
 {
     private Vector2 direction;
+
+    public float turnSpeed;
 	void Start ()
     {
         gameObject.transform.position = new Vector3(2, 5.5f, -10);
@@ -19,7 +21,7 @@ public class MousePosXLocator : MonoBehaviour
 
         if (gameObject.transform.position.x >= -6 && gameObject.transform.position.x <= 6)
         {
-            gameObject.transform.Translate(new Vector2(direction.x * Time.smoothDeltaTime * 50, 0));
+            gameObject.transform.Translate(new Vector2(direction.x * Time.deltaTime * turnSpeed, 0));
         }
     }
 }

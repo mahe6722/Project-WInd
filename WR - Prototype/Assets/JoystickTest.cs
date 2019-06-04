@@ -7,6 +7,8 @@ public class JoystickTest : MonoBehaviour {
     public float moveDirection;
     public float joystickSpeed;
 
+    public bool joystickActive;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -16,11 +18,13 @@ public class JoystickTest : MonoBehaviour {
 	void Update () {
         if (Input.GetAxis("Horizontal") > 0) {
             print("joystick right");
+            joystickActive = true;
             moveDirection = Input.GetAxis("Horizontal");
 
         }
         if (Input.GetAxis("Horizontal") < 0) {
             print("joystick left");
+            joystickActive = true;
             moveDirection = Input.GetAxis("Horizontal");
         }
 
@@ -28,10 +32,21 @@ public class JoystickTest : MonoBehaviour {
 
         if (Input.GetAxis("XboxTriggerLeft") > 0) {
             print("using left trigger");
+            joystickActive = true;
         }
 
         if (Input.GetAxis("XboxTriggerRight") < 0) {
             print("using right trigger");
+            joystickActive = true;
         }
+
+        if (Input.GetAxis("Vertical") < 0 || Input.GetAxis("Vertical") > 0){
+            joystickActive = true;
+        }
+
+        if(Input.GetKey(KeyCode.P) || Input.GetKey(KeyCode.Z)) {
+            joystickActive = false;
+        }
+
     }
 }

@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour {
     public Color colorHighlight;
     public Color colorNotPressed;
 
-   
+    public JoystickTest joystickScript;
 
     // Use this for initialization
     void Start () {
@@ -27,6 +27,7 @@ public class MainMenu : MonoBehaviour {
         colorHighlight = image_Play.color;
         colorNotPressed = image_HighScores.color;
 
+        joystickScript = GameObject.Find("MousePosLocator").GetComponent<JoystickTest>();
     }
 	
 	// Update is called once per frame
@@ -69,13 +70,26 @@ public class MainMenu : MonoBehaviour {
 
     private void HighlightMenuButtons()
     {
-        if (mouseXposTracker.transform.position.x <= 0) {
+        if (Input.GetAxis("Vertical") > 0.0f) {
+            print("Up");
+            image_Play.color = colorHighlight;
+            image_HighScores.color = colorNotPressed;
+        }
+
+        if (mouseXposTracker.transform.position.x <= 0 && joystickScript.joystickActive == false) {
             print("Up");
             image_Play.color = colorHighlight;
             image_HighScores.color = colorNotPressed;
           
         }
-        if (mouseXposTracker.transform.position.x > 1) {
+
+        if (Input.GetAxis("Vertical") < 0.0f) {
+            print("Down");
+            image_Play.color = colorNotPressed;
+            image_HighScores.color = colorHighlight;
+        }
+
+        if (mouseXposTracker.transform.position.x > 0 && joystickScript.joystickActive == false) {
             print("Down");
             image_Play.color = colorNotPressed;
             image_HighScores.color = colorHighlight;
